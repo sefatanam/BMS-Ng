@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center">
+
+
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+      <h4> Catagory</h4>
+      <mat-form-field>
+        <input type="text" required minlength="4" class="form-control" name="Name" #Name="ngModel"[(ngModel)]="service.formData.Name" matInput placeholder="Name">
+        <div class="text-left text-danger" *ngIf="Name.invalid && Name.touched">
+          Please Enter Properly
+      </div>
+      </mat-form-field><br />
+      <mat-form-field>
+        <input matInput placeholder="Code">
+      </mat-form-field>
+      <br />
+
+      <button routerLink="" class="m-4 btn btn-light btn-outline-primary" Button label="CatagoryScreen"
+        (click)="CatagoryScreen=true;ProductScreen=false">Create</button>    
+      <button class="mt-4" mat-raised-button color="primary" type="button" [disabled]="form.invalid">
+        Cancel
+      </button>
+
+    </form>
+
+    <app-show-catagory></app-show-catagory>
+
+
+</div>
