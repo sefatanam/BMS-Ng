@@ -1,1 +1,26 @@
-<h1>Hello</h1>
+<h1>Angular Practice</h1>
+
+<div>
+  <h3>Practice with Mosh</h3>
+  <input type="text" [(ngModel)]="courses.title" />
+  <h1>{{ courses.title | titleCase }}</h1>
+</div>
+
+<!-- <div>
+  <h1>{{ courses.title |summary }}</h1>
+  <h1>{{ courses.price | currency:'AUD':true:'4.1-2'}}</h1>
+  <h1>{{ courses.students | number }}</h1>
+  <h1>{{ courses.releaseDate | date:'shortTime' }}</h1>
+  <h1>{{ courses.rating | number:'1.2-2' }}</h1>
+</div> -->
+
+<!-- <img src="{{imageUrl}}" alt="image from coponent"/> -->
+<!-- <img [src]="imageUrl" alt="image from coponent"/> -->
+<!-- 
+<div (click)="onDivClicked($event)">
+  <button (keyup.enter)="onSave($event)">Save</button>
+</div> -->
+
+<!-- Dependencies of ngModel is FormModule -->
+<!-- <input  [(ngModel)]='email' (keyup.enter)="onSave()" />
+<input  [(ngModel)]='email' (keyup.enter)="onSave()" readonly/> -->
