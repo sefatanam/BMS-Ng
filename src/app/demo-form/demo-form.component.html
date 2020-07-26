@@ -1,0 +1,33 @@
+<form [formGroup]="form"  (ngSubmit)="onSubmit()">
+  <mat-form-field class="w-100">
+    <mat-label>First Name</mat-label>
+    <input type="text" matInput formControlName="firstName" />
+    <mat-error *ngIf="form.get(['firstName']).hasError('required')">
+      This field is required*
+    </mat-error>
+    <mat-error *ngIf="form.get(['firstName']).hasError('firstName')">
+      This field is required*
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label>First Name</mat-label>
+    <input type="text" matInput formControlName="lastName" />
+    <mat-error *ngIf="form.get(['lastName']).hasError('required')">
+      This field is required*
+    </mat-error>
+    <mat-error *ngIf="form.get(['lastName']).hasError('lastName')">
+      This field is required*
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <mat-label>First Name</mat-label>
+    <input type="text" matInput formControlName="contactNo" />
+    <mat-error *ngIf="form.get(['contactNo']).hasError('required')">
+      This field is required*
+    </mat-error>
+    <mat-error *ngIf="form.get(['contactNo']).hasError('contactNo')">
+      This field is required*
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">submit</button>
+</form>

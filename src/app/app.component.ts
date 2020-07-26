@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import {
+  FormControl,
+  FormBuilder,
+  Validators
+} from "@angular/forms";
+
 
 @Component({
   selector: 'app-root',
@@ -8,28 +14,29 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 
+  form;
 
-
-
-
-  courses = {
-    title: ' a versy versu long test here & there would be a chnage doiej dfss fsklfnf fsfsdf dsf sdflewdskmnflswbfsdsmdf f sdifslndkms adkasamdas lsamnks m,sd fladnf;amf sdf sanfanfjwedf',
-    rating: 4.5673,
-    students: 23422,
-    price: 190.95,
-    releaseDate: new Date(2020, 1, 21)
+  constructor(private _fb: FormBuilder) {
+    this.form = this._fb.group({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl(''),
+      address: new FormControl(''),
+      contactNo: new FormControl('')
+    });
   }
 
-  // email;
+  ngOnInit() { }
 
-  // imageUrl = "https://images.unsplash.com/photo-1593642703055-4b72c180d9b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
 
-  // onSave() {
-  //   // $event.stopPropagation();
-  //   console.log('This is DOM', this.email)
-  // }
-  // onDivClicked($event): void {
-  //   console.log("This is from DIV", $event)
-  // }
+  submitForm() {
+   
 
+    if (this.form.valid) {
+      console.log("SUBMIT", this.form.value);
+
+      this.form.reset({firstName:' '});
+    } else {
+      console.log("Form Not Valid");
+    }
+  }
 }

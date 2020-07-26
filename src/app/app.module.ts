@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule } from "@angular/forms";
+import { FormsModule,ReactiveFormsModule } from "@angular/forms";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
@@ -23,19 +23,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SummaryPipe } from './summary.pipe';
-import { TitleCasePipe } from './title-case.pipe'
+import { TitleCasePipe } from './title-case.pipe';
+import { InputFieldComponent } from './input/input-field/input-field.component';
+import { DemoFormComponent } from './demo-form/demo-form.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     SummaryPipe,
-    TitleCasePipe
+    TitleCasePipe,
+    InputFieldComponent,
+    DemoFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, MatSliderModule, FormsModule, MatInputModule, BrowserAnimationsModule, MatSelectModule,
     MatTableModule, MatDialogModule, MatButtonModule, MatDatepickerModule, MatIconModule, MatSortModule, MatSnackBarModule,
-    MatNativeDateModule, HttpClientModule
+    MatNativeDateModule, HttpClientModule,ReactiveFormsModule
 
   ],
   providers: [],
