@@ -51,11 +51,6 @@ export class InputFieldComponent implements OnInit, ControlValueAccessor, AfterV
     }
   }
 
-  // myValue() {
-  //   console.log(this.inputControl.value)
-  //   this.writeValue(this.inputControl.value)
-  // }
-
   writeValue(obj: any) {
     if (obj === '') {
       this.inputControl.reset();
