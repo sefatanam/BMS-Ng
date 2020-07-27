@@ -1,33 +1,64 @@
-<form [formGroup]="form"  (ngSubmit)="onSubmit()">
-  <mat-form-field class="w-100">
-    <mat-label>First Name</mat-label>
-    <input type="text" matInput formControlName="firstName" />
-    <mat-error *ngIf="form.get(['firstName']).hasError('required')">
-      This field is required*
-    </mat-error>
-    <mat-error *ngIf="form.get(['firstName']).hasError('firstName')">
-      This field is required*
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="w-100">
-    <mat-label>First Name</mat-label>
-    <input type="text" matInput formControlName="lastName" />
-    <mat-error *ngIf="form.get(['lastName']).hasError('required')">
-      This field is required*
-    </mat-error>
-    <mat-error *ngIf="form.get(['lastName']).hasError('lastName')">
-      This field is required*
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="w-100">
-    <mat-label>First Name</mat-label>
-    <input type="text" matInput formControlName="contactNo" />
-    <mat-error *ngIf="form.get(['contactNo']).hasError('required')">
-      This field is required*
-    </mat-error>
-    <mat-error *ngIf="form.get(['contactNo']).hasError('contactNo')">
-      This field is required*
-    </mat-error>
-  </mat-form-field>
-  <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">submit</button>
-</form>
+<div class="">
+  <div class="content">
+    <div class="title">
+      <img
+        src="https://cdn.worldvectorlogo.com/logos/angular-icon.svg"
+        alt="Angular"
+        class="myImage"
+      />
+
+      <h1>Hello There !</h1>
+      <h4>
+        Reusable Angular Mat-Input-Form Group Component
+      </h4>
+    </div>
+
+    <form class="example-form" [formGroup]="form" novalidate>
+      <my-input
+        formControlName="firstName"
+        placeholder="First Name"
+        [required]="valid"
+      >
+      </my-input>
+
+      <my-input
+        formControlName="lastName"
+        placeholder="Last Name"
+        [required]="!valid"
+      ></my-input>
+
+      <my-input
+        formControlName="address"
+        placeholder="Present Address"
+        [required]="!valid"
+      ></my-input>
+
+      <my-input
+        formControlName="contactNo"
+        placeholder="Phone No"
+        [required]="!valid"
+      ></my-input>
+
+      <div class="myBtn">
+        <button
+          mat-raised-button
+          color="accent"
+          type="button"
+          [disabled]="!form.valid"
+          (click)="submitForm()"
+        >
+          submit
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="myFooter">
+    {{ form.value | json }}
+  </div>
+  <div class="myFooter">
+    <footer class="myFooter">
+      Made by ❤ Sefat Anam |
+      <a class="text" href="https://github.com/sefatanam/ucmp">GitHub 💬</a>
+    </footer>
+  </div>
+</div>

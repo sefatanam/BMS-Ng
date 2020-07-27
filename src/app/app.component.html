@@ -1,68 +1,10 @@
-<div class="myContainer">
-  <div class="content">
-    <div class="title">
-      <img
-        src="https://cdn.worldvectorlogo.com/logos/angular-icon.svg"
-        alt="Angular"
-        class="myImage"
-      />
-
-      <h1>Hello There !</h1>
-      <h4>
-        Reusable Angular Mat-Input-Form Group Component
-      </h4>
-    </div>
-
-    <form class="example-form" [formGroup]="form" novalidate>
-      <my-input
-        formControlName="firstName"
-        placeholder="First Name"
-        [required]="valid"
-      >
-      </my-input>
-
-      <my-input
-        formControlName="lastName"
-        placeholder="Last Name"
-        [required]="!valid"
-      ></my-input>
-
-      <my-input
-        formControlName="address"
-        placeholder="Present Address"
-        [required]="!valid"
-      ></my-input>
-
-      <my-input
-        formControlName="contactNo"
-        placeholder="Phone No"
-        [required]="!valid"
-      ></my-input>
-
-      <div class="myBtn">
-        <button
-          mat-raised-button
-          color="accent"
-          type="button"
-          [disabled]="!form.valid"
-          (click)="submitForm()"
-        >
-          submit
-        </button>
-      </div>
-    </form>
-  </div>
-  <div class="myFooter">
-    {{ form.value | json }}
-  </div>
-  <div class="myFooter">
-    <footer class="myFooter">
-      Made by ❤ Sefat Anam |
-      <a class="text" href="https://github.com/sefatanam/ucmp">GitHub 💬</a>
-    </footer>
-  </div>
+<div class="container" >
+  <app-sdropdown></app-sdropdown>
 </div>
 
+<div class="container" >
+  <app-demo-form></app-demo-form>
+</div>
 <!-- <div>
   <h3>Practice with Mosh</h3>
   <input type="text" [(ngModel)]="courses.title" />

@@ -1,42 +1,49 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { createFormPageValidator } from '../form-validator';
+import { Component } from '@angular/core';
+import {
+  FormControl,
+  FormBuilder,
+  Validators
+} from "@angular/forms";
+
+
 @Component({
   selector: 'app-demo-form',
   templateUrl: './demo-form.component.html',
   styleUrls: ['./demo-form.component.css']
 })
-export class DemoFormComponent implements OnInit {
+export class DemoFormComponent {
 
-  form = this.fb.group({
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    contactNo: [null],
-  }, {
-    validators: createFormPageValidator
-  })
-  constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
+  form;
+  valid = true;
+
+
+  constructor(private _fb: FormBuilder) {
+    this.createForm();
   }
 
-  onSubmit() {
-   
-    this.form.markAllAsTouched();
-    if (this.form.valid) {
-      // this.router.navigate([RoutePath.shipping]);
-      console.log(this.form.value)
-      this.onReset()
-    }
-
-  }
-
-  onReset() {
-    this.form.reset({
-      firstName: '',
-      lastName: '',
-      contactNo: ''
+  createForm() {
+    this.form = this._fb.group({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl(''),
+      address: new FormControl(''),
+      contactNo: new FormControl('')
     });
   }
+  ngOnInit() { }
 
+
+  submitForm() {
+
+
+    if (this.form.valid) {
+
+      console.log(this.form)
+      console.log("SUBMIT", this.form.value);
+
+      this.form.reset({ firstName: ' ' });
+    } else {
+      console.log("Form Not Valid");
+    }
+  }
 }

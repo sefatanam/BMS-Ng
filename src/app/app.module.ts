@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule,ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule, MatSliderModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,21 +25,25 @@ import { AppComponent } from './app.component';
 import { SummaryPipe } from './summary.pipe';
 import { TitleCasePipe } from './title-case.pipe';
 import { InputFieldComponent } from './input/input-field/input-field.component';
-import { DemoFormComponent } from './demo-form/demo-form.component'
+import { DemoFormComponent } from './demo-form/demo-form.component';
+import { SdropdownComponent } from './primeNg/sdropdown/sdropdown.component'
 
+//PrimeNG
+import { DropdownModule } from 'primeng/dropdown';
 @NgModule({
   declarations: [
     AppComponent,
     SummaryPipe,
     TitleCasePipe,
     InputFieldComponent,
-    DemoFormComponent
+    DemoFormComponent,
+    SdropdownComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, MatSliderModule, FormsModule, MatInputModule, BrowserAnimationsModule, MatSelectModule,
+    AppRoutingModule, MatSliderModule, FormsModule, MatInputModule, BrowserAnimationsModule, NoopAnimationsModule, MatSelectModule,
     MatTableModule, MatDialogModule, MatButtonModule, MatDatepickerModule, MatIconModule, MatSortModule, MatSnackBarModule,
-    MatNativeDateModule, HttpClientModule,ReactiveFormsModule
+    MatNativeDateModule, HttpClientModule, ReactiveFormsModule, DropdownModule
 
   ],
   providers: [],
