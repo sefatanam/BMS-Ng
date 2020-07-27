@@ -15,8 +15,14 @@ export class AppComponent {
 
 
   form;
+  valid = true;
+
 
   constructor(private _fb: FormBuilder) {
+    this.createForm();
+  }
+
+  createForm() {
     this.form = this._fb.group({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl(''),
@@ -24,17 +30,18 @@ export class AppComponent {
       contactNo: new FormControl('')
     });
   }
-
   ngOnInit() { }
 
 
   submitForm() {
-   
+
 
     if (this.form.valid) {
+
+      console.log(this.form)
       console.log("SUBMIT", this.form.value);
 
-      this.form.reset({firstName:' '});
+      this.form.reset({ firstName: ' ' });
     } else {
       console.log("Form Not Valid");
     }

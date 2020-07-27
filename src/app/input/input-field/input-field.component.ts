@@ -1,76 +1,84 @@
 
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   Input,
-  Output,
-  OnChanges,
   OnInit,
   Optional,
   Self,
-  SimpleChanges,
-  HostListener,
-  EventEmitter
+  AfterViewInit
 } from "@angular/core";
 import {
-  AbstractControl,
   ControlValueAccessor,
   FormControl,
   NgControl,
-  ValidationErrors,
-  ValidatorFn,
   Validators
 } from "@angular/forms";
-import { coerceNumberProperty } from "@angular/cdk/coercion";
-
-import { Observable } from "rxjs";
-import { debounceTime } from "rxjs/operators";
-
 @Component({
   selector: "my-input",
   templateUrl: "./input-field.component.html",
   styleUrls: ["./input-field.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class InputFieldComponent implements OnInit, ControlValueAccessor {
+export class InputFieldComponent implements OnInit, ControlValueAccessor, AfterViewInit {
   @Input() placeholder: string;
+  @Input('required') _isRequired: boolean = false;
+  get isRequired(): boolean {
+    return this._isRequired;
+  }
 
-  inputControl = new FormControl(null);
+  @Input('isRequired')
+  set isRequired(value: boolean) {
+    this._isRequired = value;
+  }
+  public inputControl = new FormControl('');
   constructor(@Optional() @Self() private controlDir: NgControl) {
-    if (this.controlDir) {
-      this.controlDir.valueAccessor = this;
+    this.controlDir.valueAccessor = this;
+  }
+  public ngAfterViewInit(): void {
+    this.inputControl = this.controlDir.control as FormControl;
+  }
+
+  ngOnInit() {
+    this.settingsValidate();
+  }
+  settingsValidate = async () => {
+    if (this._isRequired) {
+      this.inputControl = new FormControl('', [Validators.required]);
+
+    } else {
+      this.inputControl = new FormControl('');
     }
   }
 
-  ngOnInit() { }
+  // myValue() {
+  //   console.log(this.inputControl.value)
+  //   this.writeValue(this.inputControl.value)
+  // }
 
-  writeValue(obj: any): void {
-    if (obj === null) {
+  writeValue(obj: any) {
+    if (obj === '') {
       this.inputControl.reset();
     }
-
     this.inputControl.setValue(obj, {
-      emitModelToViewChange: true
+      emitModelToViewChange: false
     });
-    this.onChangeCallback(obj);
   }
 
-  registerOnChange(fn: any): void {
-    this.inputControl.valueChanges.subscribe(value => fn(value));
+  registerOnChange(fn: any) {
+    this.inputControl.valueChanges.subscribe(value => this.writeValue(value));
   }
 
   changeThat() {
-    this.inputControl.reset();
   }
 
-  onChangeCallback = (value: string) => { };
+  onChangeCallback = () => { };
   onTouchCallback = () => { };
+
   registerOnTouched(fn: any): void {
-    this.onChangeCallback = fn;
   }
   onBlur() {
-    this.onTouchCallback();
+
   }
   setDisabledState?(isDisabled: boolean): void { }
 

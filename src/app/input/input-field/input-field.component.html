@@ -1,3 +1,6 @@
+<!--------------------- Stage #-01 : no error label loading ---------------------->
+<!----- Manually load error label for all input field not checked isrequired or not ------->
+
 <!-- <mat-form-field class="example-full-width" appearance="outline">
 	<input
     matInput
@@ -7,10 +10,19 @@
     (blur)="onTouched()"
   />
 	<mat-error *ngIf="inputControl.hasError('required')">This is required*</mat-error>
-
 </mat-form-field> -->
 
-<mat-form-field class="w-100" class="example-full-width" >
+<!--------------------- Stage #-02 : Dynamic error label loading ---------------------->
+<!--------- Dynamically load label by using perameter ; default value is false  --------->
+<!----------------- You can change your input text-field design :) --------->
+
+<mat-form-field class="example-full-width" appearance="outline">
   <mat-label>{{ placeholder }}</mat-label>
   <input type="text" matInput [formControl]="inputControl" />
+  <mat-error [hidden]="required" *ngIf="inputControl.hasError('required')"
+    >This field is required *</mat-error
+  >
 </mat-form-field>
+
+<!-- Debug Button for checking every input-field values-->
+<!-- <button (click)="myValue()"> See</button> -->

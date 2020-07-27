@@ -14,34 +14,30 @@
     </div>
 
     <form class="example-form" [formGroup]="form" novalidate>
-      <div>
-        <my-input
-          formControlName="firstName"
-          placeholder="First Name"
-        ></my-input>
-        <mat-error
-        *ngIf="
-        form.controls['firstName'].invalid &&
-        (form.controls['firstName'].dirty ||
-          form.controls['firstName'].touched)
-      "
-        >
-          First Name is required*
-        </mat-error>
-      </div>
+      <my-input
+        formControlName="firstName"
+        placeholder="First Name"
+        [required]="valid"
+      >
+      </my-input>
 
-      <div>
-        <my-input formControlName="lastName" placeholder="Last Name"></my-input>
-      </div>
-      <div>
-        <my-input
-          formControlName="address"
-          placeholder="Present Address"
-        ></my-input>
-      </div>
-      <div>
-        <my-input formControlName="contactNo" placeholder="Phone No"></my-input>
-      </div>
+      <my-input
+        formControlName="lastName"
+        placeholder="Last Name"
+        [required]="!valid"
+      ></my-input>
+
+      <my-input
+        formControlName="address"
+        placeholder="Present Address"
+        [required]="!valid"
+      ></my-input>
+
+      <my-input
+        formControlName="contactNo"
+        placeholder="Phone No"
+        [required]="!valid"
+      ></my-input>
 
       <div class="myBtn">
         <button
