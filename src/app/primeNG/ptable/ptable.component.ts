@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { MemberService } from "src/app/services/member.service";
+import { MemberService, Member } from "src/app/services/member.service";
 import { Observable } from "rxjs";
 
 const DATA = [
@@ -15,21 +15,13 @@ const DATA = [
   { brand: "Fiat", year: 2013, color: "Red", vin: "245t2s" },
 ];
 
-export interface Car {
-  vin?;
-  year?;
-  brand?;
-  color?;
-  price?;
-  saleDate?;
-}
-export interface Member {
-  id?;
-  firstName?;
-  lastName?;
-  contactNo?;
-  address?;
-}
+// export interface Member {
+//   id?;
+//   firstName?;
+//   lastName?;
+//   contactNo?;
+//   address?;
+// }
 @Component({
   selector: "app-ptable",
   templateUrl: "./ptable.component.html",
@@ -38,7 +30,7 @@ export interface Member {
 export class PtableComponent implements OnInit {
 
   members: any;
-  cars2: Car[];
+
 
   constructor(private _service: MemberService) {
 
@@ -57,6 +49,13 @@ export class PtableComponent implements OnInit {
 
   onRowEditSave(member: Member) {
     console.log('EDIT', member)
+    let object = new Member();
+    object.id = member.id;
+    object.firstName = member.firstName;
+    object.lastName = member.lastName;
+    object.contactNo = member.contactNo;
+    object.address = member.address;
+    this._service.putMember(object).subscribe();
 
   }
 

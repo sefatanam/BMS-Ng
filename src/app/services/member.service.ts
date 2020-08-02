@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 
-class Member {
+export class Member {
   id: number = 0;
   firstName: string = '';
   lastName: string = '';
@@ -20,8 +20,8 @@ class Member {
 
 
 export class MemberService {
-  formData: Member;
-  memberList: Member[];
+  // formData: Member;
+  // memberList: Member[];
 
   public URL = "https://localhost:5001/api/members";
 
@@ -45,11 +45,11 @@ export class MemberService {
   }
 
   putMember(formData: Member) {
-    return this.http.put(this.URL + 'members/' + formData.id, formData)
+    return this.http.put(this.URL + '/' + formData.id, formData)
   }
 
   getMemberById(id: number) {
-    return this.http.get(this.URL + 'members/' + id);
+    return this.http.get(this.URL + '/' + id);
   }
 
 

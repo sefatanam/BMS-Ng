@@ -1,11 +1,7 @@
 <div class="">
   <div class="content">
     <div class="title">
-      <img
-        src="https://cdn.worldvectorlogo.com/logos/angular-icon.svg"
-        alt="Angular"
-        class="myImage"
-      />
+      <img src="https://cdn.worldvectorlogo.com/logos/angular-icon.svg" alt="Angular" class="myImage" />
 
       <h1>Hello There !</h1>
       <h4>
@@ -14,43 +10,21 @@
     </div>
 
     <form class="example-form" [formGroup]="form" novalidate>
-      <my-input
-        formControlName="firstName"
-        placeholder="First Name"
-        [required]="valid"
-      >
+      <my-input formControlName="firstName" placeholder="First Name" [required]="valid">
       </my-input>
 
-      <my-input
-        formControlName="lastName"
-        placeholder="Last Name"
-        [required]="!valid"
-      ></my-input>
+      <my-input formControlName="lastName" placeholder="Last Name" [required]="!valid"></my-input>
 
-      <my-input
-        formControlName="address"
-        placeholder="Present Address"
-        [required]="!valid"
-      ></my-input>
+      <my-input formControlName="address" placeholder="Present Address" [required]="!valid"></my-input>
 
-      <my-input
-        formControlName="contactNo"
-        placeholder="Phone No"
-        [required]="!valid"
-      ></my-input>
+      <my-input formControlName="contactNo" placeholder="Phone No" [required]="!valid"></my-input>
 
       <div class="myBtn">
-        <button
-          mat-raised-button
-          color="accent"
-          type="button"
-          [disabled]="!form.valid"
-          (click)="submitForm()"
-        >
+        <button mat-raised-button color="accent" type="button" [disabled]="!form.valid" (click)="submitForm()">
           submit
         </button>
       </div>
-      <div class="myBtn">
+      <!-- <div class="myBtn">
         <button
           mat-raised-button
           color="primary"
@@ -59,7 +33,7 @@
         >
           submit
         </button>
-      </div>
+      </div> -->
     </form>
   </div>
   <div class="myFooter">
