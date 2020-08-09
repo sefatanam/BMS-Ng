@@ -19,15 +19,23 @@ export class PostsComponent implements OnInit {
   }
 
   createPost(input: HTMLInputElement) {
-    let post = { title: input.value }; input.value = '';
+    let post = { title: input.value };
+    this.posts.splice(0, 0, post);
+
+    input.value = '';
+
 
     this.service.create(post).subscribe(newPostId => {
       post['id'] = newPostId;
-      this.posts.splice(0, 0, post);
     }, (error: AppError) => {
+      this.posts.splice(0, 1);
+
       if (error instanceof BadInput) {
         alert('This post has already been deleted.')
-      } else throw error;
+      } else {
+
+        throw error;
+      };
     })
 
   }

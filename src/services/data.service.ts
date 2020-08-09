@@ -20,8 +20,9 @@ export class DataService {
     }
 
     create(resource) {
-        return this.http.post(this.url, JSON.stringify(resource))
-            .pipe(map(res => res), catchError(this.handleError))
+        return Observable.throw(new AppError())
+        // return this.http.post(this.url, JSON.stringify(resource))
+        //     .pipe(map(res => res), catchError(this.handleError))
     }
 
     update(resource) {
