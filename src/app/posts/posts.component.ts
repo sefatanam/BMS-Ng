@@ -22,16 +22,7 @@ export class PostsComponent implements OnInit {
       .subscribe(res => {
         this.posts = res as any[];
       })
-    // this.service.getPosts()
-    //   .subscribe(res => {
-    //     this.posts = res as any[];
-    //   }, (error: Response) => {
-    //     if (error.status === 404) {
-    //       alert('This post has already been deleted.')
-    //     } else {
 
-    //     }
-    //   })
   }
 
   createPost(input: HTMLInputElement) {
@@ -40,7 +31,6 @@ export class PostsComponent implements OnInit {
 
     this.service.create(post)
       .subscribe(response => {
-        this.posts = response as any[];
         post['id'] = response;
         this.posts.splice(0, 0, post);
       }, (error: AppError) => {
@@ -49,17 +39,6 @@ export class PostsComponent implements OnInit {
         } else throw error;
       })
 
-    // this.service.createPost(post)
-    //   .subscribe(response => {
-    //     post['id'] = response;
-    //     this.posts.splice(0, 0, post);
-    //   }, (error: AppError) => {
-    //     if (error instanceof BadInput) {
-    //       alert("Bad input!")
-    //     }
-    //     alert("An unexpected error occured!")
-    //     console.log(error)
-    //   })
   }
 
   updatePost(post) {
@@ -68,21 +47,11 @@ export class PostsComponent implements OnInit {
       .subscribe(response => {
         console.log(response)
       })
-
-    // this.service.updatePost(post)
-    //   .subscribe(response => {
-    //     console.log(response)
-    //   }, error => {
-    //     alert("An unexpected error occured!")
-    //     console.log(error)
-    //   })
-    // we can use put method here
-    // this.http.put(this.url, JSON.stringify(post))
   }
 
   deletePost(post) {
-
-    this.service.delete(1000).subscribe(() => {
+    console.log(this.posts.length)
+    this.service.delete(post.id).subscribe(() => {
       let index = this.posts.indexOf(post)
       this.posts.splice(index, 1);
     }, (error: AppError) => {
@@ -91,22 +60,5 @@ export class PostsComponent implements OnInit {
       } else throw error;
     })
   }
-
-
-  //   this.service.deletePost(1000).subscribe(response => {
-  //     let index = this.posts.indexOf(post)
-  //     this.posts.splice(index, 1);
-  //   }, (error: AppError) => {
-  //     if (error instanceof NotFoundError) {
-  //       alert('This post has already been deleted.')
-  //     } else {
-  //       alert("An unexpected error occured!");
-  //       console.log(error)
-
-  //     }
-
-  //     console.log(error)
-  //   })
-  // }
 
 }
