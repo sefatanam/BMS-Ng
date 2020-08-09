@@ -1,5 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { NgModule, ErrorHandler } from "@angular/core";
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
@@ -49,6 +49,8 @@ import { InputTextModule } from "primeng/inputtext";
 import { PtableComponent } from './primeNg/ptable/ptable.component';
 import { FileFormComponent } from './file-form/file-form.component';
 import { PostsComponent } from './posts/posts.component';
+import { PostsService } from './services/posts.service';
+import { AppErrorHandler } from 'src/common/app-error-handler';
 
 @NgModule({
   declarations: [
@@ -96,7 +98,7 @@ import { PostsComponent } from './posts/posts.component';
 
     FormsModule,
   ],
-  providers: [MemberService],
+  providers: [MemberService, PostsService, { provide: ErrorHandler, useClass: AppErrorHandler }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
