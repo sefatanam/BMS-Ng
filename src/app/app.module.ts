@@ -47,6 +47,8 @@ import { ButtonModule } from "primeng/button";
 import { ProgressBarModule } from "primeng/progressbar";
 import { InputTextModule } from "primeng/inputtext";
 import { PtableComponent } from './primeNg/ptable/ptable.component';
+import { FileFormComponent } from './file-form/file-form.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { PtableComponent } from './primeNg/ptable/ptable.component';
     DemoFormComponent,
     SdropdownComponent,
     PtableComponent,
+    FileFormComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
