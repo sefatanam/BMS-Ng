@@ -51,6 +51,8 @@ import { FileFormComponent } from './file-form/file-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './services/posts.service';
 import { AppErrorHandler } from 'src/common/app-error-handler';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { GithubFollowersService } from './services/github-followers.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { AppErrorHandler } from 'src/common/app-error-handler';
     PtableComponent,
     FileFormComponent,
     PostsComponent,
+    GithubFollowersComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +101,11 @@ import { AppErrorHandler } from 'src/common/app-error-handler';
 
     FormsModule,
   ],
-  providers: [MemberService, PostsService, { provide: ErrorHandler, useClass: AppErrorHandler }],
+  providers: [
+    MemberService,
+    PostsService,
+    GithubFollowersService,
+    { provide: ErrorHandler, useClass: AppErrorHandler }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
