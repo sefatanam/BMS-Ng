@@ -33,7 +33,7 @@ export class DemoFormComponent implements OnInit {
   form;
 
 
-
+  Address: string = 'Address'
   constructor(private _fb: FormBuilder, private _service: MemberService, private datePipe: DatePipe) {
     this.createForm();
   }

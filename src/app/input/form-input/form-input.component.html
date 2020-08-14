@@ -1,0 +1,8 @@
+<div fxLayout="column" fxFlex="100">
+    <mat-label>{{formLabel}}</mat-label>
+    <mat-form-field appearance="outline" fxFlex="100" class="pr-4 media-pr">
+        <span class="material-icons" matPrefix>{{formIcon}}</span>
+        <input matInput [type]="formInputType" formControlName="{{formControl}}" [placeholder]="formPlaceholder" />
+        <!-- <mat-error *ngIf="formCondition">{{formError}}</mat-error> -->
+    </mat-form-field>
+</div>

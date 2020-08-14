@@ -1,0 +1,12 @@
+mat-label {
+  margin-bottom: 3px;
+}
+
+.material-icons {
+  font-size: 25px;
+  margin-right: 10px;
+  background: -webkit-linear-gradient(27deg, #09a6f3 30%, #07c8f9 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

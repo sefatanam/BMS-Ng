@@ -54,6 +54,7 @@ import { AppErrorHandler } from 'src/common/app-error-handler';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
 import { GithubFollowersService } from './services/github-followers.service';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { FormInputComponent } from './input/form-input/form-input.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { ImageUploadComponent } from './image-upload/image-upload.component';
     PostsComponent,
     GithubFollowersComponent,
     ImageUploadComponent,
+    FormInputComponent,
   ],
   imports: [
     BrowserModule,
