@@ -18,16 +18,16 @@ export class SdropdownComponent implements OnInit {
   selectedCar2: string = 'BMW';
   constructor() {
     this.cars = [
-      { label: 'Audi', value: 'Audi' },
-      { label: 'BMW', value: 'BMW' },
-      { label: 'Fiat', value: 'Fiat' },
-      { label: 'Ford', value: 'Ford' },
-      { label: 'Honda', value: 'Honda' },
-      { label: 'Jaguar', value: 'Jaguar' },
-      { label: 'Mercedes', value: 'Mercedes' },
-      { label: 'Renault', value: 'Renault' },
-      { label: 'VW', value: 'VW' },
-      { label: 'Volvo', value: 'Volvo' }
+      { label: 'Audi', value: 1 },
+      { label: 'BMW', value: 2 },
+      { label: 'Fiat', value: 3 },
+      { label: 'Ford', value: 3 },
+      { label: 'Honda', value: 4 },
+      { label: 'Jaguar', value: 5 },
+      { label: 'Mercedes', value: 6 },
+      { label: 'Renault', value: 7 },
+      { label: 'VW', value: 8 },
+      { label: 'Volvo', value: 9 }
     ];
   }
 

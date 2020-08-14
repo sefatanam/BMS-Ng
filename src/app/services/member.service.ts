@@ -11,6 +11,7 @@ export class Member {
   lastName: string = '';
   address: string = '';
   contactNo: string = '';
+  createOn: Date = null;
 }
 
 
@@ -40,6 +41,7 @@ export class MemberService {
     model.lastName = member.lastName;
     model.address = member.address;
     model.contactNo = member.contactNo;
+    model.createOn = member.createOn;
 
     return this.http.post(this.URL, model);
   }

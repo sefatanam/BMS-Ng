@@ -7,7 +7,7 @@ import {
 } from "@angular/forms";
 import { MemberService } from '../services/member.service';
 import { Observable, throwError } from 'rxjs';
-
+import { DatePipe } from '@angular/common'
 
 class Member {
 
@@ -15,12 +15,14 @@ class Member {
   lastName: string = " ";
   address: string = " ";
   contactNo: string = " ";
+  createOn: Date = null;
 
 }
 @Component({
   selector: 'app-demo-form',
   templateUrl: './demo-form.component.html',
-  styleUrls: ['./demo-form.component.css']
+  styleUrls: ['./demo-form.component.css'],
+  providers: [DatePipe] // Add this
 })
 export class DemoFormComponent implements OnInit {
 
@@ -32,7 +34,7 @@ export class DemoFormComponent implements OnInit {
 
 
 
-  constructor(private _fb: FormBuilder, private _service: MemberService) {
+  constructor(private _fb: FormBuilder, private _service: MemberService, private datePipe: DatePipe) {
     this.createForm();
   }
 
@@ -52,6 +54,7 @@ export class DemoFormComponent implements OnInit {
       lastName: new FormControl(''),
       address: new FormControl(''),
       contactNo: new FormControl(''),
+      createOn: new FormControl(new Date())
 
     });
   }
@@ -67,8 +70,11 @@ export class DemoFormComponent implements OnInit {
 
     if (this.form.valid) {
 
+
       console.log(this.form)
       // console.log("SUBMIT", this.form.value);
+
+      //this.form.value['createOn'] = this.datePipe.transform(this.form.value['createOn'], 'dd/MM/yyyy HH:mm:ss');
 
       this._service.postMember(this.form.value).subscribe(obj => console.log("SUBMIT", obj));
       // this._service.getMembers();
