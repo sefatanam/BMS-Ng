@@ -44,6 +44,7 @@ import { ContextMenuModule } from "primeng/contextmenu";
 import { DialogModule } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
 
+
 import { ProgressBarModule } from "primeng/progressbar";
 import { InputTextModule } from "primeng/inputtext";
 import { PtableComponent } from './primeNg/ptable/ptable.component';
@@ -55,6 +56,7 @@ import { GithubFollowersComponent } from './github-followers/github-followers.co
 import { GithubFollowersService } from './services/github-followers.service';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { FormInputComponent } from './input/form-input/form-input.component';
+import { PdropdpwnComponent } from './primeNG/pdropdpwn/pdropdpwn.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,7 @@ import { FormInputComponent } from './input/form-input/form-input.component';
     GithubFollowersComponent,
     ImageUploadComponent,
     FormInputComponent,
+    PdropdpwnComponent,
   ],
   imports: [
     BrowserModule,

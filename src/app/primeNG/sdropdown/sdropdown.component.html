@@ -1,11 +1,11 @@
-
-
-
-
 <h3>Content with Filters</h3>
-<div >
+<div>
+    {{data.value}}
+    {{cars.length}}
+</div>
+<div>
 
-    <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" filter="true"  [style]="{'width':'300px'}">
+    <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" filter="true" filterBy="label" [style]="{'width':'300px'}" #data>
         <ng-template let-item pTemplate="selectedItem">
             <span style="vertical-align:middle; margin-left: .5em">{{item.label}}</span>
         </ng-template>
@@ -15,5 +15,31 @@
             </div>
         </ng-template>
     </p-dropdown>
+    <button pButton type="button" icon="pi pi-window-minimize" iconPos="left" (click)='dialogShowHandler()'></button>
     <p>Selected Car: {{selectedCar2 || 'none'}}</p>
+    <h3>Basic</h3>
+    <!-- <button type="button" (click)="showBasicDialog()" pButton icon="pi pi-external-link" label="Show"></button> -->
+    <p-dialog header="Car Entry" [(visible)]="displayBasic" [style]="{width: '30vw'}" [baseZIndex]="10000">
+        <form [formGroup]='form'>
+            <div class="p-field p-grid">
+                <label for="label" class="p-col-fixed" style="width:100px">Name</label>
+                <div class="p-col">
+                    <input id="firstname3" type="text" pInputText formControlName="label">
+                </div>
+            </div>
+            <div class="p-field p-grid">
+                <label for="value" class="p-col-fixed" style="width:100px">Value</label>
+                <div class="p-col">
+                    <input id="lastname3" type="text" pInputText formControlName="value">
+                </div>
+            </div>
+
+        </form>
+
+
+        <p-footer>
+            <button type="button" pButton icon="pi pi-check" (click)="dialogHandler()" label="Yes"></button>
+            <button type="button" pButton icon="pi pi-times" (click)="dialogShowHandler()" label="No" class="ui-button-secondary"></button>
+        </p-footer>
+    </p-dialog>
 </div>
