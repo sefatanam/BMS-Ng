@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {
   FormControl,
   FormBuilder,
@@ -26,6 +26,7 @@ class Member {
 })
 export class DemoFormComponent implements OnInit {
 
+  @Input('name') name: string;
   public URL = "https://localhost:5001/api/members";
   formData: Member;
   valid = true;
@@ -35,6 +36,7 @@ export class DemoFormComponent implements OnInit {
 
   Address: string = 'Address'
   constructor(private _fb: FormBuilder, private _service: MemberService, private datePipe: DatePipe) {
+    if (this.name != null && this.name != '') this.form.firstName = this.name;
     this.createForm();
   }
 

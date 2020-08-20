@@ -55,6 +55,7 @@ export class PtableComponent implements OnInit {
     object.lastName = member.lastName;
     object.contactNo = member.contactNo;
     object.address = member.address;
+    object.createOn = member.createOn;
     this._service.putMember(object).subscribe();
 
   }

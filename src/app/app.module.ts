@@ -57,6 +57,8 @@ import { GithubFollowersService } from './services/github-followers.service';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { FormInputComponent } from './input/form-input/form-input.component';
 import { PdropdpwnComponent } from './primeNG/pdropdpwn/pdropdpwn.component';
+import { MdropdownComponent } from './input/mdropdown/mdropdown.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import { PdropdpwnComponent } from './primeNG/pdropdpwn/pdropdpwn.component';
     ImageUploadComponent,
     FormInputComponent,
     PdropdpwnComponent,
+    MdropdownComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -107,6 +111,7 @@ import { PdropdpwnComponent } from './primeNG/pdropdpwn/pdropdpwn.component';
     ProgressBarModule,
 
     FormsModule,
+    MatAutocompleteModule
   ],
   providers: [
     MemberService,
@@ -114,5 +119,6 @@ import { PdropdpwnComponent } from './primeNG/pdropdpwn/pdropdpwn.component';
     GithubFollowersService,
     { provide: ErrorHandler, useClass: AppErrorHandler }],
   bootstrap: [AppComponent],
+  entryComponents: [MdropdownComponent]
 })
 export class AppModule { }

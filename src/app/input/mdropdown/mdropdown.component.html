@@ -1,0 +1,64 @@
+<form class="example-form" [formGroup]="form">
+
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" [matAutocomplete]="auto" formControlName="myControl" (input)="onSearchChange($event.target.value)" />
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn.bind(this)">
+            <mat-option>---Select Any---</mat-option>
+
+            <mat-option *ngFor="let member of filterOptions" [value]="member.id">
+                {{member.firstName}}
+            </mat-option>
+
+        </mat-autocomplete>
+
+    </mat-form-field>
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" [disabled]="isDisabled" (click)="openConfirmDialogWithoutRef()">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+
+    <!-- <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <mat-select [formControl]="myControl">
+            <mat-option>-- None --</mat-option>
+
+            <mat-option *ngFor="let member of memberList" [value]="member.firstName">
+                {{member.firstName}}
+            </mat-option>
+
+        </mat-select>
+    </mat-form-field> -->
+    <!-- <mat-label>First Name</mat-label>
+    <mat-form-field class="example-full-width">
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let member of memberList" [value]="member.id">
+                {{member.firstName}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field> -->
+</form>
+
+<button mat-button cdkFocusInitial (click)="submit()">Yes</button>
+
+<button mat-button (click)="openDialogWithoutRef()">Open dialog with template ref</button>
+<ng-template #confirmDialog>
+    <h2 mat-dialog-title>Khela Hope</h2>
+    <mat-dialog-content class="mat-typography">
+        <h1>Do you want to add this "{{filterValue}}" ? </h1>
+    </mat-dialog-content>
+    <div mat-dialog-actions>
+        <button mat-button (click)="closeDialog()">No </button>
+        <button mat-button cdkFocusInitial (click)="openDialogWithoutRef()">Yes</button>
+    </div>
+</ng-template>
+<ng-template #secondDialog>
+    <h2 mat-dialog-title>Khela Hobe !
+        <button (click)="closeDialog()">CLOSE</button>
+    </h2>
+
+    <mat-dialog-content class="mat-typography">
+        <app-demo-form name='filterValue'></app-demo-form>
+    </mat-dialog-content>
+</ng-template>

@@ -19,8 +19,8 @@
     <p>Selected Car: {{selectedCar2 || 'none'}}</p>
     <h3>Basic</h3>
     <!-- <button type="button" (click)="showBasicDialog()" pButton icon="pi pi-external-link" label="Show"></button> -->
-    <p-dialog header="Car Entry" [(visible)]="displayBasic" [style]="{width: '30vw'}" [baseZIndex]="10000">
-        <form [formGroup]='form'>
+    <p-dialog header="Car Entry" [(visible)]="displayBasic" [style]="{width: '60vw'}" [baseZIndex]="10000">
+        <!-- <form [formGroup]='form'>
             <div class="p-field p-grid">
                 <label for="label" class="p-col-fixed" style="width:100px">Name</label>
                 <div class="p-col">
@@ -34,7 +34,9 @@
                 </div>
             </div>
 
-        </form>
+        </form> -->
+
+        <app-ptable></app-ptable>
 
 
         <p-footer>
