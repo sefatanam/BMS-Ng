@@ -1,15 +1,56 @@
 <div class="">
   <div class="content">
-    <div class="title">
+
+    <div *ngIf='skeletonLoader'>
+      <div class="fb-item">
+        <div class="first-section-wrapper">
+          <div class="gravatar">
+            <ngx-skeleton-loader appearance="circle" [theme]="{ width: '80px', height: '80px' }">
+            </ngx-skeleton-loader>
+          </div>
+          <div class="gravatar-title">
+            <div>
+              <ngx-skeleton-loader [theme]="{
+                  width: '200px',
+                  'border-radius': '0',
+                  height: '15px',
+                  'margin-bottom': '10px'
+                }"></ngx-skeleton-loader>
+            </div>
+            <div>
+              <ngx-skeleton-loader [theme]="{ width: '170px', 'border-radius': '0', height: '15px' }"></ngx-skeleton-loader>
+            </div>
+          </div>
+        </div>
+        <div class="second-section-wrapper">
+          <div class="wrapper">
+            <ngx-skeleton-loader [theme]="{
+                width: '80%',
+                'border-radius': '0',
+                height: '15px',
+                'margin-bottom': '10px'
+              }"></ngx-skeleton-loader>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="title" *ngIf='!skeletonLoader'>
       <img src="https://cdn.worldvectorlogo.com/logos/angular-icon.svg" alt="Angular" class="myImage" />
 
       <h1>Hello There !</h1>
+
       <h4>
+
         Reusable Angular Mat-Input-Form Group Component
       </h4>
     </div>
 
-    <form class="example-form" [formGroup]="form" novalidate>
+    <div *ngIf='skeletonLoader' class="example-form">
+      <ngx-skeleton-loader count='5' [theme]="{ 'border-radius': '10px', height: '50px'}"></ngx-skeleton-loader>
+    </div>
+    <form class="example-form" [formGroup]="form" novalidate *ngIf='!skeletonLoader'>
       <my-input formControlName="firstName" placeholder="First Name" [required]="valid"></my-input>
 
       <my-input formControlName="lastName" placeholder="Last Name" [required]="!valid"></my-input>

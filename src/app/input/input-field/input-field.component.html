@@ -19,9 +19,7 @@
 <mat-form-field class="example-full-width" appearance="outline">
   <mat-label>{{ placeholder }}</mat-label>
   <input type="text" matInput [formControl]="inputControl" />
-  <mat-error [hidden]="required" *ngIf="inputControl.hasError('required')"
-    >This field is required *</mat-error
-  >
+  <mat-error [hidden]="required" *ngIf="inputControl.hasError('required')">This field is required *</mat-error>
 </mat-form-field>
 
 <!-- Debug Button for checking every input-field values-->

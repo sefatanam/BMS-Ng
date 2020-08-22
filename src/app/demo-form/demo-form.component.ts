@@ -48,7 +48,10 @@ export class DemoFormComponent implements OnInit {
     })
   }
 
-
+  skeletonLoader = true;
+  loader() {
+    setTimeout(() => { this.skeletonLoader = false }, 2000)
+  }
   createForm() {
     this.form = this._fb.group({
       id: 0,
@@ -63,7 +66,7 @@ export class DemoFormComponent implements OnInit {
 
 
   ngOnInit() {
-
+    this.loader();
   }
 
 

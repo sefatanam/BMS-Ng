@@ -60,6 +60,8 @@ import { PdropdpwnComponent } from './primeNG/pdropdpwn/pdropdpwn.component';
 import { MdropdownComponent } from './input/mdropdown/mdropdown.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
+
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,7 +113,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     ProgressBarModule,
 
     FormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [
     MemberService,
