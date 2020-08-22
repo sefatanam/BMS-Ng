@@ -5,7 +5,7 @@ import {
   Validators,
   FormGroup
 } from "@angular/forms";
-import { MemberService } from '../services/member.service';
+import { MemberService } from "@services/member.service";
 import { Observable, throwError } from 'rxjs';
 import { DatePipe } from '@angular/common'
 
