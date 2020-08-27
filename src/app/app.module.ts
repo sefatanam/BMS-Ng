@@ -8,7 +8,7 @@ import {
   NoopAnimationsModule,
 } from "@angular/platform-browser/animations";
 import { MatInputModule } from "@angular/material/input";
-import { MatSelectModule, MatSliderModule } from "@angular/material";
+import { MatSelectModule, MatSliderModule, MatSidenavModule, MatSlideToggleModule, MatToolbarModule, MatTooltipModule, MatCheckboxModule } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
 
 import {
@@ -62,6 +62,17 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const routes: Routes = [
+  { path: 'form', component: DemoFormComponent },
+  { path: 'table', component: PtableComponent },
+  { path: '', component: GithubFollowersComponent },
+]
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +89,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     FormInputComponent,
     PdropdpwnComponent,
     MdropdownComponent,
+    NavMenuComponent,
 
   ],
   imports: [
@@ -87,7 +99,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     FormsModule,
     MatInputModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
+
     MatSelectModule,
     MatTableModule,
     MatDialogModule,
@@ -114,7 +126,15 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
     FormsModule,
     MatAutocompleteModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    RouterModule.forRoot(routes, { enableTracing: true }),
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+
+    MatToolbarModule,
+    MatTooltipModule,
+    MatCheckboxModule,
   ],
   providers: [
     MemberService,
