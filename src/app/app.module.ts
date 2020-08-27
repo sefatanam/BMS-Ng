@@ -8,7 +8,7 @@ import {
   NoopAnimationsModule,
 } from "@angular/platform-browser/animations";
 import { MatInputModule } from "@angular/material/input";
-import { MatSelectModule, MatSliderModule, MatSidenavModule, MatSlideToggleModule, MatToolbarModule, MatTooltipModule, MatCheckboxModule } from "@angular/material";
+import { MatSelectModule, MatSliderModule, MatSidenavModule, MatSlideToggleModule, MatToolbarModule, MatTooltipModule, MatCheckboxModule, MatListModule } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
 
 import {
@@ -135,6 +135,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatTooltipModule,
     MatCheckboxModule,
+    MatListModule
   ],
   providers: [
     MemberService,

@@ -5,30 +5,15 @@
         </button> Header
     </mat-toolbar>
 
-    <mat-sidenav-container class="example-container">
+    <mat-sidenav-container autosize class="example-container">
         <mat-sidenav #sidenav mode="side" opened class="example-sidenav" [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top" [fixedBottomGap]="options.value.bottom">
-            {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+            <mat-nav-list>
+                <a mat-list-item *ngFor="let nav of fillerNav" routerLink="{{nav.url}}">{{nav.name}}</a>
+            </mat-nav-list>
         </mat-sidenav>
 
-        <mat-sidenav-content [formGroup]="options">
-
+        <mat-sidenav-content class="content">
             <router-outlet></router-outlet>
-            <!-- <p>
-                <mat-checkbox formControlName="fixed">Fixed</mat-checkbox>
-            </p>
-            <p>
-                <mat-form-field>
-                    <mat-label>Top gap</mat-label>
-                    <input matInput type="number" formControlName="top">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field>
-                    <mat-label>Bottom gap</mat-label>
-                    <input matInput type="number" formControlName="bottom">
-                </mat-form-field>
-            </p>
-            <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p> -->
         </mat-sidenav-content>
     </mat-sidenav-container>
 
