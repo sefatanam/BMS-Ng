@@ -24,7 +24,6 @@ export class MdropdownComponent implements OnInit {
 
   memberList: Member[];
   filterOptions: Member[];
-
   filterValue: string;
   isDisabled = true;
 
@@ -40,19 +39,19 @@ export class MdropdownComponent implements OnInit {
   form;
   createForm() {
     this.form = this.fb.group({
-      myControl: new FormControl('', Validators.required),
+      myControl: new FormControl(0, Validators.required),
       id: 0,
     })
   }
 
   @ViewChild('secondDialog', { static: false }) secondDialog: TemplateRef<any>;
-  @ViewChild('confirmDialog', { static: false }) confirmDialog: TemplateRef<any>;
+  // @ViewChild('confirmDialog', { static: false }) confirmDialog: TemplateRef<any>;
   openDialogWithoutRef() {
     this.dialog.open(this.secondDialog);
   }
-  openConfirmDialogWithoutRef() {
-    this.dialog.open(this.confirmDialog);
-  }
+  // openConfirmDialogWithoutRef() {
+  //   this.dialog.open(this.confirmDialog);
+  // }
 
   closeDialog() {
     this.dialog.closeAll()
@@ -72,14 +71,16 @@ export class MdropdownComponent implements OnInit {
   }
 
   displayFn(id: number) {
-    return id != undefined && id != null ? this.getNameById(id).firstName : '';
+    return id != 0 ? this.displayNameById(id) : null;
   }
 
-  getNameById(id: number) {
-    return this.memberList.find(m => m.id == id);
+  displayNameById(id: number): string {
+    return this.memberList[id].firstName;
   }
 
   submit() {
+    const { myControl } = this.form.value;
+    if (typeof myControl !== 'number') return;
     console.log(this.form)
   }
 }

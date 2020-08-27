@@ -2,18 +2,19 @@
 
     <mat-form-field>
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name" [matAutocomplete]="auto" formControlName="myControl" (input)="onSearchChange($event.target.value)" />
+        <input type="text" matInput placeholder="First Name" [matAutocomplete]="auto" formControlName="myControl" (input)="onSearchChange($event.target.value)" />
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn.bind(this)">
-            <mat-option>---Select Any---</mat-option>
+            <!-- <mat-option>---Select Any---</mat-option> -->
 
             <mat-option *ngFor="let member of filterOptions" [value]="member.id">
                 {{member.firstName}}
             </mat-option>
 
         </mat-autocomplete>
-
+        <!-- <mat-error [hidden]="required" *ngIf="myControl.hasError('required')">This field is required *</mat-error> -->
+        <mat-hint *ngIf="form.get('myControl').hasError('required')" i18n><span class="mat-error">Please choose a options</span></mat-hint>
     </mat-form-field>
-    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" [disabled]="isDisabled" (click)="openConfirmDialogWithoutRef()">
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" [disabled]="isDisabled" (click)="openDialogWithoutRef()">
         <mat-icon>menu</mat-icon>
     </button>
 
