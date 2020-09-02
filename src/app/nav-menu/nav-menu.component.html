@@ -1,8 +1,22 @@
-<ng-container>
+<div [class.alternative]="isDarkTheme">
     <mat-toolbar class="example-header">
-        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button> Header
+        <ng-container>
+            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon" (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </ng-container>
+        <ng-container>
+            <mat-slide-toggle (click)='onThemeChange()'>
+
+
+                <mat-icon>bedtime</mat-icon>
+
+            </mat-slide-toggle>
+        </ng-container>
+
+
+
+
     </mat-toolbar>
 
     <mat-sidenav-container autosize class="example-container">
@@ -18,4 +32,4 @@
     </mat-sidenav-container>
 
     <mat-toolbar class="example-footer">Footer</mat-toolbar>
-</ng-container>
+</div>

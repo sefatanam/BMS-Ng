@@ -7,10 +7,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent implements OnInit {
+
+  isDarkTheme = false;
   constructor(private fb: FormBuilder) { }
   public fillerNav = navigtions;
   public options: FormGroup = this.fb.group(Conditions);
   ngOnInit() {
+  }
+
+  onThemeChange(): void {
+    this.isDarkTheme = !this.isDarkTheme;
   }
 
 }
