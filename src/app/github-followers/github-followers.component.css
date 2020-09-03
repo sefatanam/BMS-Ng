@@ -4,29 +4,43 @@
   border-radius: 100%;
 }
 .example-card {
-  min-width: 400px;
-  min-height: 400px;
-  max-height: 400px;
-  max-width: 400px;
-
-  margin: 10px;
+  max-width: 280px;
+  margin: 2px;
+  overflow: hidden;
 }
 
 .example-header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
+  /* background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover; */
 }
-
+.text-oneline {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 .cards {
   display: flex;
   flex-direction: row;
   flex-flow: row;
   width: 100%;
-  height: 100vh;
-  overflow: scroll;
+  height: 100%;
 }
 
 .page-wrapper {
   display: flex;
   flex-direction: row;
+}
+
+.content {
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.mat-card {
+  margin-bottom: 16px;
+}
+
+.img {
+  overflow: hidden;
 }

@@ -78,7 +78,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { InputDatetimeComponent } from './input/input-datetime/input-datetime.component';
 import { InputDropdownComponent } from './input/input-dropdown/input-dropdown.component';
 
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 const routes: Routes = [
   { path: 'form', component: DemoFormComponent },
   { path: 'table', component: PtableComponent },
@@ -154,6 +154,7 @@ const routes: Routes = [
     MatCardModule,
     MatGridListModule,
     MatDividerModule,
+    FlexLayoutModule
 
 
   ],
