@@ -37,4 +37,5 @@
   flex-direction: column;
   overflow: scroll; */
   padding: 10px;
+  scroll-behavior: smooth;
 }

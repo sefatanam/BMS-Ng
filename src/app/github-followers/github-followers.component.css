@@ -1,46 +1,47 @@
-.avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 100%;
-}
-.example-card {
-  max-width: 280px;
-  margin: 2px;
-  overflow: hidden;
-}
-
-.example-header-image {
-  /* background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover; */
-}
 .text-oneline {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.cards {
-  display: flex;
-  flex-direction: row;
-  flex-flow: row;
-  width: 100%;
-  height: 100%;
-}
-
-.page-wrapper {
-  display: flex;
-  flex-direction: row;
-}
 
 .content {
-  padding: 16px;
   width: 100%;
   height: 100%;
 }
 
-.mat-card {
-  margin-bottom: 16px;
-}
+/* .mat-card {
+  max-width: 280px;
+  margin: 2px;
+  overflow: hidden;
+} */
 
 .img {
   overflow: hidden;
+}
+
+::ng-deep .mat-card {
+  max-width: 280px;
+  margin: 2px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  background-color: #f7f7f7;
+
+  /* border: 55px solid #f9f9; */
+  border-radius: 10px !important;
+  /* border: #67a6d6 !important; */
+  /* border: 3px dotted #2d2d2d; */
+  border: 3px solid #000;
+  box-shadow: 15px 15px 15px 20px #aed1bb;
+}
+::ng-deep .mat-card:hover {
+  transition: 0.5s ease;
+  max-width: 280px;
+  margin: 2px;
+  overflow: hidden;
+
+  /* border: 55px solid #f9f9; */
+  border-radius: 10px !important;
+  /* border: #67a6d6 !important; */
+  border: 3px solid #65fc9f;
+  transform: scale(0.99);
 }
