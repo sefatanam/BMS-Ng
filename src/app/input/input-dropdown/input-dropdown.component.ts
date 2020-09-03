@@ -2,11 +2,11 @@ import { Component, OnInit, AfterViewInit, Input, Optional, Self } from '@angula
 import { ControlValueAccessor, FormControl, NgControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'my-datetime',
-  templateUrl: './input-datetime.component.html',
-  styleUrls: ['./input-datetime.component.css']
+  selector: 'my-dropdown',
+  templateUrl: './input-dropdown.component.html',
+  styleUrls: ['./input-dropdown.component.css']
 })
-export class InputDatetimeComponent implements OnInit, AfterViewInit, ControlValueAccessor {
+export class InputDropdownComponent implements OnInit, AfterViewInit, ControlValueAccessor {
   @Input() placeholder: string;
   @Input('required') _isRequired = false;
   get isRequired(): boolean {

@@ -9,22 +9,25 @@ import {
 } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import {
-  MatSelectModule,
+
   MatSliderModule,
   MatSidenavModule,
   MatSlideToggleModule,
   MatToolbarModule,
   MatTooltipModule,
   MatCheckboxModule,
-  MatListModule
+  MatListModule,
+  MatGridListModule,
+  MatDividerModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatSelectModule } from '@angular/material/select';
 import {
   MatTableModule,
   MatIconModule,
   MatButtonModule,
 } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
 import { MatSortModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material';
 
@@ -73,7 +76,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { Routes, RouterModule } from '@angular/router';
 import { InputDatetimeComponent } from './input/input-datetime/input-datetime.component';
-
+import { InputDropdownComponent } from './input/input-dropdown/input-dropdown.component';
 
 
 const routes: Routes = [
@@ -101,6 +104,7 @@ const routes: Routes = [
     MdropdownComponent,
     NavMenuComponent,
     InputDatetimeComponent,
+    InputDropdownComponent,
 
   ],
   imports: [
@@ -146,7 +150,12 @@ const routes: Routes = [
     MatToolbarModule,
     MatTooltipModule,
     MatCheckboxModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDividerModule,
+
+
   ],
   providers: [
     MemberService,

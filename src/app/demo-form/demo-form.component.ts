@@ -4,17 +4,17 @@ import {
   FormBuilder,
   Validators,
   FormGroup
-} from "@angular/forms";
-import { MemberService } from "@services/member.service";
+} from '@angular/forms';
+import { MemberService } from '@services/member.service';
 import { Observable, throwError } from 'rxjs';
-import { DatePipe } from '@angular/common'
+import { DatePipe } from '@angular/common';
 
 class Member {
 
-  firstName: string = " ";
-  lastName: string = " ";
-  address: string = " ";
-  contactNo: string = " ";
+  firstName = ' ';
+  lastName = ' ';
+  address = ' ';
+  contactNo = ' ';
   createOn: Date = null;
 
 }
@@ -27,30 +27,30 @@ class Member {
 export class DemoFormComponent implements OnInit {
 
   @Input('name') name: string;
-  public URL = "https://localhost:5001/api/members";
+  public URL = 'https://localhost:5001/api/members';
   formData: Member;
   valid = true;
   data$ = [];
   form;
 
 
-  Address: string = 'Address'
+  Address = 'Address';
   constructor(private _fb: FormBuilder, private _service: MemberService, private datePipe: DatePipe) {
-    if (this.name != null && this.name != '') this.form.firstName = this.name;
+    if (this.name != null && this.name !== '') { this.form.firstName = this.name; }
     this.createForm();
   }
 
-  createFormGroup(formBuilder: FormBuilder) {
+  // createFormGroup(formBuilder: FormBuilder) {
 
-    return formBuilder.group({
+  //   return formBuilder.group({
 
 
-    })
-  }
+  //   })
+  // }
 
   skeletonLoader = true;
   loader() {
-    setTimeout(() => { this.skeletonLoader = false }, 2000)
+    setTimeout(() => { this.skeletonLoader = false; }, 2000);
   }
   createForm() {
     this.form = this._fb.group({
@@ -59,7 +59,8 @@ export class DemoFormComponent implements OnInit {
       lastName: new FormControl(''),
       address: new FormControl(''),
       contactNo: new FormControl(''),
-      createOn: new FormControl(new Date())
+      createOn: new FormControl(new Date()),
+      selectOption: new FormControl('')
 
     });
   }
@@ -76,17 +77,13 @@ export class DemoFormComponent implements OnInit {
     if (this.form.valid) {
 
 
-      console.log(this.form)
-      // console.log("SUBMIT", this.form.value);
+      console.log(this.form);
 
-      //this.form.value['createOn'] = this.datePipe.transform(this.form.value['createOn'], 'dd/MM/yyyy HH:mm:ss');
-
-      this._service.postMember(this.form.value).subscribe(obj => console.log("SUBMIT", obj));
-      // this._service.getMembers();
+      this._service.postMember(this.form.value).subscribe(obj => console.log('SUBMIT', obj));
 
       this.form.reset({ firstName: ' ' });
     } else {
-      console.log("Form Not Valid");
+      console.log('Form Not Valid');
     }
   }
 

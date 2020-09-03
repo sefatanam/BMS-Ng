@@ -3,3 +3,30 @@
   height: 80px;
   border-radius: 100%;
 }
+.example-card {
+  min-width: 400px;
+  min-height: 400px;
+  max-height: 400px;
+  max-width: 400px;
+
+  margin: 10px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: row;
+}
