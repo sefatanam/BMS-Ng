@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>{{placeholder}}</mat-label>
+    <input matInput [matDatepicker]="picker" [formControl]="inputControl">
+    <!-- <input matInput type="datetime-local" formControlName="createOn"> -->
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error [hidden]="required" *ngIf="inputControl.hasError('required')">This field is required *</mat-error>
+</mat-form-field>

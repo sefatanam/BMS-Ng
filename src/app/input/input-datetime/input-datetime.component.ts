@@ -1,28 +1,14 @@
+import { Component, OnInit, AfterViewInit, Input, Optional, Self } from '@angular/core';
+import { ControlValueAccessor, FormControl, NgControl, Validators } from '@angular/forms';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-  Optional,
-  Self,
-  AfterViewInit
-} from '@angular/core';
-import {
-  ControlValueAccessor,
-  FormControl,
-  NgControl,
-  Validators
-} from '@angular/forms';
 @Component({
-  selector: "my-input",
-  templateUrl: './input-field.component.html',
-  styleUrls: ['./input-field.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'my-dropdown',
+  templateUrl: './input-datetime.component.html',
+  styleUrls: ['./input-datetime.component.css']
 })
-export class InputFieldComponent implements OnInit, ControlValueAccessor, AfterViewInit {
+export class InputDatetimeComponent implements OnInit, AfterViewInit, ControlValueAccessor {
   @Input() placeholder: string;
-  @Input('required') _isRequired: boolean = false;
+  @Input('required') _isRequired = false;
   get isRequired(): boolean {
     return this._isRequired;
   }

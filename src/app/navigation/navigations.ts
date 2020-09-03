@@ -7,11 +7,11 @@ interface Menu {
   url: string;
   icon: string;
   id: number | string;
-  type: string
+  type: string;
 }
 
 
-// in future if need to customize side-nav position 
+// in future if need to customize side-nav position
 export const options = {
   bottom: 0,
   fixed: false,
@@ -39,5 +39,11 @@ export const navigtions: Menu[] = [
     type: 'item',
     icon: '',
     url: '/table'
+  }, {
+    id: 4,
+    name: 'Image',
+    type: 'item',
+    icon: '',
+    url: '/image'
   }
-]
+];

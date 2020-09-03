@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { navigtions, options as Conditions } from '../navigation/navigations'
+import { navigtions, options as Conditions } from '../navigation/navigations';
 import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-nav-menu',

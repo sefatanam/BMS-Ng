@@ -64,7 +64,6 @@ import { AppErrorHandler } from 'src/common/app-error-handler';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
 import { GithubFollowersService } from './services/github-followers.service';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
-import { FormInputComponent } from './input/form-input/form-input.component';
 import { PdropdpwnComponent } from './primeNG/pdropdpwn/pdropdpwn.component';
 import { MdropdownComponent } from './input/mdropdown/mdropdown.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -73,11 +72,14 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { Routes, RouterModule } from '@angular/router';
+import { InputDatetimeComponent } from './input/input-datetime/input-datetime.component';
+
 
 
 const routes: Routes = [
   { path: 'form', component: DemoFormComponent },
   { path: 'table', component: PtableComponent },
+  { path: 'image', component: ImageUploadComponent },
   { path: '', component: GithubFollowersComponent },
 ];
 
@@ -95,10 +97,10 @@ const routes: Routes = [
     PostsComponent,
     GithubFollowersComponent,
     ImageUploadComponent,
-    FormInputComponent,
     PdropdpwnComponent,
     MdropdownComponent,
     NavMenuComponent,
+    InputDatetimeComponent,
 
   ],
   imports: [
