@@ -79,7 +79,9 @@ import { InputDatetimeComponent } from './input/input-datetime/input-datetime.co
 import { InputDropdownComponent } from './input/input-dropdown/input-dropdown.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatResponsiveTableComponent } from './material/mat-responsive-table/mat-responsive-table.component';
 const routes: Routes = [
+  { path: 'materialTable', component: MatResponsiveTableComponent },
   { path: 'form', component: DemoFormComponent },
   { path: 'table', component: PtableComponent },
   { path: 'image', component: ImageUploadComponent },
@@ -105,6 +107,7 @@ const routes: Routes = [
     NavMenuComponent,
     InputDatetimeComponent,
     InputDropdownComponent,
+    MatResponsiveTableComponent,
 
   ],
   imports: [

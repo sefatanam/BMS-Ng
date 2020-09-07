@@ -45,5 +45,12 @@ export const navigtions: Menu[] = [
     type: 'item',
     icon: '',
     url: '/image'
+  },
+  {
+    id: 5,
+    name: 'Material Table',
+    type: 'item',
+    icon: '',
+    url: '/materialTable'
   }
 ];
