@@ -1,4 +1,9 @@
-/* .example-full-width {
-    width: 100%;
-    margin: 10px
-  } */
+.example-full-width {
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 1rem;
+}

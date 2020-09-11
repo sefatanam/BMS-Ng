@@ -52,5 +52,12 @@ export const navigtions: Menu[] = [
     type: 'item',
     icon: '',
     url: '/materialTable'
+  },
+  {
+    id: 5,
+    name: 'Master Detail',
+    type: 'item',
+    icon: '',
+    url: '/masterDetail'
   }
 ];

@@ -80,13 +80,7 @@ import { InputDropdownComponent } from './input/input-dropdown/input-dropdown.co
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatResponsiveTableComponent } from './material/mat-responsive-table/mat-responsive-table.component';
-const routes: Routes = [
-  { path: 'materialTable', component: MatResponsiveTableComponent },
-  { path: 'form', component: DemoFormComponent },
-  { path: 'table', component: PtableComponent },
-  { path: 'image', component: ImageUploadComponent },
-  { path: '', component: GithubFollowersComponent },
-];
+import { MasterComponent } from './masterDetail/master/master.component';
 
 
 @NgModule({
@@ -108,6 +102,7 @@ const routes: Routes = [
     InputDatetimeComponent,
     InputDropdownComponent,
     MatResponsiveTableComponent,
+    MasterComponent,
 
   ],
   imports: [
@@ -145,7 +140,7 @@ const routes: Routes = [
     FormsModule,
     MatAutocompleteModule,
     NgxSkeletonLoaderModule,
-    RouterModule.forRoot(routes, { enableTracing: true }),
+    // RouterModule.forRoot(routes, { enableTracing: true }),
     MatSidenavModule,
     MatSliderModule,
     MatSlideToggleModule,

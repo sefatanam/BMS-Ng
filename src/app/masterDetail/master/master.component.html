@@ -1,0 +1,52 @@
+<div class="content">
+
+    <!-- <h2>Customer Info</h2> -->
+    <div class="customer-content">
+        <div>
+            <h2>Customer Info</h2>
+        </div>
+        <div>
+            <form [formGroup]="masterForm" class="form-container" fxLayout="row wrap" fxLayoutGap="10px grid">
+                <my-input formControlName="name" placeholder="Name" [required]="valid" fxFlex.xs="100%" fxFlex.sm="100%"></my-input>
+                <my-input formControlName="address" placeholder="Address" [required]="!valid" fxFlex.xs="100%" fxFlex.sm="100%"></my-input>
+                <my-input formControlName="contactNo" placeholder="Phone No" [required]="!valid" fxFlex.xs="100%" fxFlex.sm="100%"></my-input>
+                <my-input formControlName="invoiceNo" placeholder="Invoice" [required]="!valid" fxFlex.xs="100%" fxFlex.sm="100%"></my-input>
+
+
+
+                <div class="buttonContainer">
+                    <button mat-raised-button color="accent" type="button" [disabled]="!masterForm.valid" (click)="submitForm()">
+                        Confirm
+                    </button>
+                    <button mat-raised-button color="accent" type="button" [disabled]="!masterForm.valid" (click)="submitForm()">
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div class="customer-content">
+        <div>
+            <h2>Customer Info</h2>
+        </div>
+        <div>
+            <form [formGroup]="masterForm" class="form-container">
+                <my-input formControlName="name" placeholder="Name" [required]="valid"></my-input>
+                <my-input formControlName="address" placeholder="Address" [required]="!valid"></my-input>
+                <my-input formControlName="contactNo" placeholder="Phone No" [required]="!valid"></my-input>
+                <my-input formControlName="invoiceNo" placeholder="Invoice" [required]="!valid"></my-input>
+                <button mat-raised-button color="accent" type="button" [disabled]="!masterForm.valid" (click)="submitForm()">
+                    Confirm
+                </button>
+                <button mat-raised-button color="accent" type="button" [disabled]="!masterForm.valid" (click)="submitForm()">
+                    Cancel
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+</div>
