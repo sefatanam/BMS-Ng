@@ -65,6 +65,17 @@
       <my-dropdown formControlName="selectOption" placeholder="Choose a Options"></my-dropdown>
 
 
+      <mat-form-field class="example-chip-list" appearance="outline">
+        <mat-label>Tags</mat-label>
+        <mat-chip-list #tags aria-label="Fruit selection">
+          <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable" (removed)="remove(fruit)">
+            {{fruit.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="New Tag..." [matChipInputFor]="tags" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+      </mat-form-field>
+
       <div class="myBtn">
         <button mat-raised-button color="accent" type="button" [disabled]="!form.valid" (click)="submitForm()">
           submit

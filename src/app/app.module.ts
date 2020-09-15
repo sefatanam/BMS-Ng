@@ -18,7 +18,8 @@ import {
   MatCheckboxModule,
   MatListModule,
   MatGridListModule,
-  MatDividerModule
+  MatDividerModule,
+  MatChipsModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
@@ -152,7 +153,8 @@ import { MasterComponent } from './masterDetail/master/master.component';
     MatCardModule,
     MatGridListModule,
     MatDividerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatChipsModule
 
 
   ],
