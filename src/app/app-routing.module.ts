@@ -1,3 +1,4 @@
+import { ReusPtableComponent } from './primeNG/reus-ptable/reus-ptable.component';
 import { MasterComponent } from './masterDetail/master/master.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'table', component: PtableComponent },
   { path: 'image', component: ImageUploadComponent },
   { path: 'masterDetail', component: MasterComponent },
+  { path: 'usableTable', component: ReusPtableComponent },
   { path: '', component: GithubFollowersComponent },
 ];
 

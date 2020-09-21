@@ -1,0 +1,19 @@
+<p-table [columns]="Columns" [value]="DataLists">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">{{col.header}}</th>
+            <th>Action</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">{{rowData[col.property]}}</td>
+            <td>
+                <button pButton type="button" icon="pi pi-pencil" class="ui-button-info prime-button" (click)="onEditOut(rowData)"></button>
+                <button pButton type="button" icon="pi pi-trash" class="ui-button-success prime-button" (click)="onDeleteOut(rowData.id)"></button>
+                <button pButton type="button" icon="pi pi-eye" class="ui-button-danger prime-button" (click)="onShowOut(rowData)"></button>
+                <button pButton type="button" icon="pi pi-ellipsis-v" class="ui-button-danger prime-button" (click)="onOptionsOut(rowData)"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

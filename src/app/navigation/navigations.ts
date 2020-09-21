@@ -54,10 +54,17 @@ export const navigtions: Menu[] = [
     url: '/materialTable'
   },
   {
-    id: 5,
+    id: 6,
     name: 'Master Detail',
     type: 'item',
     icon: '',
     url: '/masterDetail'
+  },
+  {
+    id: 6,
+    name: 'Usable Table',
+    type: 'item',
+    icon: '',
+    url: '/usableTable'
   }
 ];

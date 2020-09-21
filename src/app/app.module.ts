@@ -82,6 +82,7 @@ import { InputDropdownComponent } from './input/input-dropdown/input-dropdown.co
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatResponsiveTableComponent } from './material/mat-responsive-table/mat-responsive-table.component';
 import { MasterComponent } from './masterDetail/master/master.component';
+import { ReusPtableComponent } from './primeNG/reus-ptable/reus-ptable.component';
 
 
 @NgModule({
@@ -104,6 +105,7 @@ import { MasterComponent } from './masterDetail/master/master.component';
     InputDropdownComponent,
     MatResponsiveTableComponent,
     MasterComponent,
+    ReusPtableComponent,
 
   ],
   imports: [
