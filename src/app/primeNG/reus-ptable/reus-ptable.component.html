@@ -1,4 +1,4 @@
-<p-table [columns]="Columns" [value]="DataLists">
+<p-table [columns]="Columns" [value]="DataLists" [scrollable]="true" [rows]="100" scrollHeight="550px" [virtualScroll]="true" [virtualRowHeight]="34" [lazy]="true">
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns">{{col.header}}</th>
