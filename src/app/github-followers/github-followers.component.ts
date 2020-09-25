@@ -4,74 +4,32 @@ import { PTableColumn } from '../primeNG/reus-ptable/reus-ptable.component';
 
 
 const DUMMY_DATA = [
-  { id: 1, name: 'bill' },
-  { id: 2, name: 'bob' },
-  { id: 3, name: 'billy' },
-  { id: 4, name: 'ASas' },
-  { id: 5, name: 'fdgdsf' },
-  { id: 6, name: 'hg' },
-  { id: 7, name: 'dsfhgfh' },
-  { id: 8, name: 'dfh' },
-  { id: 9, name: 'dghd' },
-  { id: 1, name: 'bill' },
-  { id: 2, name: 'bob' },
-  { id: 3, name: 'billy' },
-  { id: 4, name: 'ASas' },
-  { id: 5, name: 'fdgdsf' },
-  { id: 6, name: 'hg' },
-  { id: 7, name: 'dsfhgfh' },
-  { id: 8, name: 'dfh' },
-  { id: 9, name: 'dghd' },
-  { id: 1, name: 'bill' },
-  { id: 2, name: 'bob' },
-  { id: 3, name: 'billy' },
-  { id: 4, name: 'ASas' },
-  { id: 5, name: 'fdgdsf' },
-  { id: 6, name: 'hg' },
-  { id: 7, name: 'dsfhgfh' },
-  { id: 8, name: 'dfh' },
-  { id: 9, name: 'dghd' },
-  { id: 1, name: 'bill' },
-  { id: 2, name: 'bob' },
-  { id: 3, name: 'billy' },
-  { id: 4, name: 'ASas' },
-  { id: 5, name: 'fdgdsf' },
-  { id: 6, name: 'hg' },
-  { id: 7, name: 'dsfhgfh' },
-  { id: 8, name: 'dfh' },
-  { id: 9, name: 'dghd' },
-  { id: 1, name: 'bill' },
-  { id: 2, name: 'bob' },
-  { id: 3, name: 'billy' },
-  { id: 4, name: 'ASas' },
-  { id: 5, name: 'fdgdsf' },
-  { id: 6, name: 'hg' },
-  { id: 7, name: 'dsfhgfh' },
-  { id: 8, name: 'dfh' },
-  { id: 9, name: 'dghd' },
-  { id: 1, name: 'bill' },
-  { id: 2, name: 'bob' },
-  { id: 3, name: 'billy' },
-  { id: 4, name: 'ASas' },
-  { id: 5, name: 'fdgdsf' },
-  { id: 6, name: 'hg' },
-  { id: 7, name: 'dsfhgfh' },
-  { id: 8, name: 'dfh' },
-  { id: 9, name: 'dghd' },
-  { id: 1, name: 'bill' },
-  { id: 2, name: 'bob' },
-  { id: 3, name: 'billy' },
-  { id: 4, name: 'ASas' },
-  { id: 5, name: 'fdgdsf' },
-  { id: 6, name: 'hg' },
-  { id: 7, name: 'dsfhgfh' },
-  { id: 8, name: 'dfh' },
-  { id: 9, name: 'dghd' }
+  { id: 1, name: 'bill', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 2, name: 'bob', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 3, name: 'billy', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 4, name: 'ASas', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
+  { id: 5, name: 'fdgdsf', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 6, name: 'hg', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
+  { id: 7, name: 'dsfhgfh', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 8, name: 'dfh', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
+  { id: 9, name: 'dghd', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
+  { id: 10, name: 'bill', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 11, name: 'bob', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 12, name: 'billy', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 13, name: 'ASas', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
+  { id: 14, name: 'fdgdsf', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 15, name: 'hg', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
+  { id: 16, name: 'dsfhgfh', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 17, name: 'dfh', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
+  { id: 19, name: 'dghd', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
+
 ];
 
 const COLUMNS: PTableColumn[] = [
   { property: 'id', header: 'Serial' },
   { property: 'name', header: 'Name' },
+  { property: 'contactNo', header: 'Phone No' },
+  { property: 'address', header: 'Permanent Address' },
 ];
 
 @Component({
@@ -102,6 +60,7 @@ export class GithubFollowersComponent implements OnInit {
   deleteClick($event) {
     console.log($event);
   }
-
-
+  searchClick($event) {
+    console.log($event);
+  }
 }

@@ -4,13 +4,14 @@
   background-color: transparent;
   border: 0;
   color: #2b72d5;
+  transition: transform 0.45s ease-in-out;
 }
 
 .prime-button:hover {
   background-color: transparent;
   color: #2b72d5;
-  transform: scale(1.2);
-  transition: transform 0.3s linear;
+  transform: scale(1.1);
+  transition: transform 0.45s ease-in-out;
 }
 .export-option-show {
   position: relative;

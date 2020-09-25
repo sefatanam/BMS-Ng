@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, AfterContentInit, OnInit } from '@angular/core';
 
 
 
@@ -12,33 +12,57 @@ export interface PTableColumn {
   templateUrl: './reus-ptable.component.html',
   styleUrls: ['./reus-ptable.component.css']
 })
-export class ReusPtableComponent {
+export class ReusPtableComponent implements OnInit {
 
   @Input() DataLists: any[];
   @Input() Columns: PTableColumn[];
 
-  @Output() onEdit: EventEmitter<object> = new EventEmitter<object>();
-  @Output() onShow: EventEmitter<object> = new EventEmitter<object>();
-  @Output() onDelete: EventEmitter<number> = new EventEmitter<number>();
-  @Output() onOptions: EventEmitter<object> = new EventEmitter<object>();
+  @Output() Edit: EventEmitter<object> = new EventEmitter<object>();
+  @Output() Show: EventEmitter<object> = new EventEmitter<object>();
+  @Output() Delete: EventEmitter<number> = new EventEmitter<number>();
+  @Output() Options: EventEmitter<object> = new EventEmitter<object>();
+  @Output() Refresh: EventEmitter<object> = new EventEmitter<object>();
+  @Output() Search: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {
+  public filterText = '';
+  public loading = true;
+  public display = false;
+  public viewObject: any = null;
+  public scrollableCols: any[];
+  public frozenCols: any[];
 
+
+  constructor() { }
+  ngOnInit(): void {
+    this.loading = this.DataLists === null ? true : false;
+
+    this.frozenCols = [
+      { field: 'id', header: 'Serial' }
+    ];
+    this.scrollableCols = this.Columns.filter(dl => dl.property !== 'id');
   }
 
   onEditOut(rowData: object): void {
-    this.onEdit.emit(rowData);
-
+    this.Edit.emit(rowData);
   }
+
   onShowOut(rowData: object): void {
-    this.onShow.emit(rowData);
+    this.display = true;
+    this.viewObject = JSON.parse(JSON.stringify(rowData));
+    // In case of use Show Action
+    this.Show.emit(rowData);
   }
   onDeleteOut(id: number): void {
-    this.onDelete.emit(id);
+    this.Delete.emit(id);
   }
   onOptionsOut(rowData: object): void {
-    this.onOptions.emit(rowData);
+    this.Options.emit(rowData);
   }
-
+  onRefreshOut(): void {
+    this.Refresh.emit();
+  }
+  onFilterOut(): void {
+    this.Search.emit(this.filterText);
+  }
 
 }

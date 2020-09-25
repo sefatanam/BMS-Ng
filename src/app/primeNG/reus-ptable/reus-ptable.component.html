@@ -1,6 +1,23 @@
-<p-table [columns]="Columns" [value]="DataLists" [scrollable]="true" [rows]="100" scrollHeight="550px" [virtualScroll]="true" [virtualRowHeight]="34" [lazy]="true">
+<p-table [columns]="Columns" [value]="DataLists" [paginator]="true" [rows]="5" rowHover="true" [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10,15]" [loading]='loading'>
+    <ng-template pTemplate="caption">
+        <div class="table-header">
+            <section [style]="{'margin-right':'1em'}">
+                <input pInputText type="text" [(ngModel)]="filterText" placeholder="Global Search" [style]="{'font-size': '1.3em'}" />
+                <button pButton type="button" icon="pi pi-search" [style]="{'font-size': '1.3em'}" class="p-mr-2 prime-button" (click)="onFilterOut()"></button>
+                <button pButton type="button" icon="pi pi-refresh" class="p-mr-2 prime-button" (click)="onRefreshOut()"></button>
+                <!-- If need to enable this filter button do it own functionality ; then enable it -->
+                <!-- <button pButton type="button" icon="pi pi-filter" class="p-mr-2 prime-button"></button> -->
+            </section>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="colgroup" let-columns>
+        <colgroup>
+            <col style="width:10ch">
+            <col *ngFor="let col of columns">
+        </colgroup>
+    </ng-template>
     <ng-template pTemplate="header" let-columns>
-        <tr>
+        <tr [style]="{'text-align': 'center', 'font-size': '1.3em'}">
             <th *ngFor="let col of columns">{{col.header}}</th>
             <th>Action</th>
         </tr>
@@ -9,11 +26,25 @@
         <tr>
             <td *ngFor="let col of columns">{{rowData[col.property]}}</td>
             <td>
-                <button pButton type="button" icon="pi pi-pencil" class="ui-button-info prime-button" (click)="onEditOut(rowData)"></button>
-                <button pButton type="button" icon="pi pi-trash" class="ui-button-success prime-button" (click)="onDeleteOut(rowData.id)"></button>
-                <button pButton type="button" icon="pi pi-eye" class="ui-button-danger prime-button" (click)="onShowOut(rowData)"></button>
-                <button pButton type="button" icon="pi pi-ellipsis-v" class="ui-button-danger prime-button" (click)="onOptionsOut(rowData)"></button>
+                <button pButton type="button" icon="pi pi-pencil" class="p-mr-2 prime-button" (click)="onEditOut(rowData)"></button>
+                <button pButton type="button" icon="pi pi-trash" class="p-mr-2 prime-button" (click)="onDeleteOut(rowData.id)"></button>
+                <button pButton type="button" icon="pi pi-eye" class="p-mr-2 prime-button" (click)="onShowOut(rowData)"></button>
+                <!-- If need to enable this filter button do it own functionality ; then enable it -->
+                <!-- <button pButton type="button" icon="pi pi-ellipsis-v" class="p-mr-2 prime-button" (click)="onOptionsOut(rowData)"></button> -->
             </td>
         </tr>
     </ng-template>
 </p-table>
+
+<!-- Displaying Selected Row Detail -->
+<p-dialog keepInViewport='true' modal='true' header="This Record " [(visible)]="display" [style]="{width: '30vw'}">
+    <p-table [columns]="Columns" *ngIf='display'>
+        <ng-template pTemplate="header" let-columns>
+            <tr [style]="{'text-align': 'center', 'font-size': '1.3em'}" *ngFor="let col of columns">
+                <th>
+                    <h4>{{col.header}} : {{viewObject[col.property]}}</h4>
+                </th>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-dialog>

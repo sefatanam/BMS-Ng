@@ -20,3 +20,109 @@ $NgPractice-theme-to: mat-dark-theme($alt-primary, $alt-accent);
 .alternative {
   @include angular-material-theme($NgPractice-theme-to);
 }
+
+thead > tr > th,
+.p-datatable-thead {
+  background-color: #439adf !important;
+  color: #ffffff !important;
+}
+
+.bgt .p-button {
+  background: transparent !important;
+  border: none !important;
+  padding: 10px 15px !important;
+  &:focus {
+    outline: 0 !important;
+    border: 0 !important;
+  }
+  button {
+    &:focus {
+      outline: 0 !important;
+      border: 0 !important;
+    }
+  }
+}
+
+prime ng table .elma-table {
+  .prime-button {
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: 0;
+    color: #2b72d5;
+    transition: 0.34s ease-in-out;
+
+    &:hover {
+      background-color: transparent;
+      color: #2b72d5;
+      transition: 0.34s ease-in-out;
+    }
+  }
+
+  .export-option-show {
+    position: relative;
+  }
+  .export-options {
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-table-header {
+    background-color: #2b72d5;
+  }
+}
+
+// icon color
+.icon-color {
+  background: -webkit-linear-gradient(#2b72d5, #0396c3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.8;
+}
+
+// p-button hover effect
+.p-button.p-button-success.p-button-outlined {
+  &:hover {
+    background-color: #689f38 !important;
+    color: #fff !important;
+    border: 1px solid #689f38 !important;
+  }
+}
+
+.p-button.p-button-secondary.p-button-outlined {
+  &:hover {
+    background-color: #607d8b !important;
+    color: #fff !important;
+    border: 1px solid #607d8b !important;
+  }
+}
+
+.p-button.p-button-danger.p-button-outlined {
+  &:hover {
+    background-color: #d32f2f !important;
+    color: #fff !important;
+    border: 1px solid #d32f2f !important;
+  }
+}
+
+.p-button.p-button-outlined {
+  &:hover {
+    background-color: #2196f3 !important;
+    color: #fff !important;
+    border: 1px solid #2196f3 !important;
+  }
+}
+
+.p-button.p-button-warning.p-button-outlined {
+  &:hover {
+    background-color: #fbc02d !important;
+    color: #fff !important;
+    border: 1px solid #fbc02d !important;
+  }
+}
