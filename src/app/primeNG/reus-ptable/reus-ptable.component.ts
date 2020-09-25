@@ -35,11 +35,6 @@ export class ReusPtableComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
     this.loading = this.DataLists === null ? true : false;
-
-    this.frozenCols = [
-      { field: 'id', header: 'Serial' }
-    ];
-    this.scrollableCols = this.Columns.filter(dl => dl.property !== 'id');
   }
 
   onEditOut(rowData: object): void {
