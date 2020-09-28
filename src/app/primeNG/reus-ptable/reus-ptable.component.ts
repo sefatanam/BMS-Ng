@@ -31,7 +31,11 @@ export class ReusPtableComponent implements OnInit {
   public scrollableCols: any[];
   public frozenCols: any[];
 
+  public showAll: any = false;
 
+  triggerReadMore() {
+    this.showAll = !this.showAll;
+  }
   constructor() { }
   ngOnInit(): void {
     this.loading = this.DataLists === null ? true : false;

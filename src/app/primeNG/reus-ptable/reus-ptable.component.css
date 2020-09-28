@@ -30,3 +30,12 @@
 .main-table-header {
   background-color: #2b72d5;
 }
+
+.trancator {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.trancator:hover {
+  opacity: 0;
+}

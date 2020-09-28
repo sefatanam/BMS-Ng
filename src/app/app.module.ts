@@ -83,6 +83,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatResponsiveTableComponent } from './material/mat-responsive-table/mat-responsive-table.component';
 import { MasterComponent } from './masterDetail/master/master.component';
 import { ReusPtableComponent } from './primeNG/reus-ptable/reus-ptable.component';
+import { ShortTextPipe } from './short-text.pipe';
 
 
 @NgModule({
@@ -106,6 +107,7 @@ import { ReusPtableComponent } from './primeNG/reus-ptable/reus-ptable.component
     MatResponsiveTableComponent,
     MasterComponent,
     ReusPtableComponent,
+    ShortTextPipe,
 
   ],
   imports: [

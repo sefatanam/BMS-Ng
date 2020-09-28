@@ -24,7 +24,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
-            <td *ngFor="let col of columns">{{rowData[col.property]}}</td>
+            <td *ngFor="let col of columns;let index=index" (mousedown)='index=!index'>{{rowData[col.property] | shortText:3:index}} </td>
             <td>
                 <button pButton type="button" icon="pi pi-pencil" class="p-mr-2 prime-button" (click)="onEditOut(rowData)"></button>
                 <button pButton type="button" icon="pi pi-trash" class="p-mr-2 prime-button" (click)="onDeleteOut(rowData.id)"></button>

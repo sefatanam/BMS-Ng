@@ -4,9 +4,9 @@ import { PTableColumn } from '../primeNG/reus-ptable/reus-ptable.component';
 
 
 const DUMMY_DATA = [
-  { id: 1, name: 'bill', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 1, name: 'bill jean is length of 20 need to trantactor okay please do itbill jean is length of 20 need to trantactor okay please do itbill jean is length of 20 need to trantactor okay please do it', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
   { id: 2, name: 'bob', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
-  { id: 3, name: 'billy', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
+  { id: 3, name: 'bill jean is length of 20 need to trantactor okay please do itbill jean is length of 20 need to tranta', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
   { id: 4, name: 'ASas', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
   { id: 5, name: 'fdgdsf', contactNo: '12345678912', address: '19 Holy Street/ Halifax' },
   { id: 6, name: 'hg', contactNo: '12345678912', address: '19 Holy Street/ Halifax ' },
