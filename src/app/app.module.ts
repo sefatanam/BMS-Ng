@@ -1,3 +1,4 @@
+import { BaseComponent } from './primeNG/base.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 
@@ -107,7 +108,7 @@ import { ShortTextPipe } from './short-text.pipe';
     MatResponsiveTableComponent,
     MasterComponent,
     ReusPtableComponent,
-    ShortTextPipe,
+    ShortTextPipe, BaseComponent
 
   ],
   imports: [
@@ -159,7 +160,8 @@ import { ShortTextPipe } from './short-text.pipe';
     MatDividerModule,
     FlexLayoutModule,
     MatChipsModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+
 
 
   ],
@@ -169,6 +171,6 @@ import { ShortTextPipe } from './short-text.pipe';
     GithubFollowersService,
     { provide: ErrorHandler, useClass: AppErrorHandler }],
   bootstrap: [AppComponent],
-  entryComponents: [MdropdownComponent]
+  entryComponents: [MdropdownComponent, BaseComponent]
 })
 export class AppModule { }
