@@ -40,7 +40,7 @@ const COLUMNS: PTableColumn[] = [
 export class GithubFollowersComponent implements OnInit {
 
   followers;
-
+  public title: string = 'Github Component';
   public Columns: PTableColumn[];
   public DataLists: any[];
 
