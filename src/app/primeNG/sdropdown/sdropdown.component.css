@@ -1,0 +1,26 @@
+.input-with-button {
+  display: flex;
+  flex-direction: row;
+  border-color: blueviolet;
+  border-width: 2px;
+  border: 2px;
+  background: #579ee8;
+  padding: 0.6px;
+  flex-wrap: wrap-reverse;
+  position: relative;
+}
+.dd-btn-input {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.btn-style {
+  height: 35px;
+}
+.ui-button-icon-only {
+  font-size: 16px !important;
+}
+
+.ui-button-icon-only {
+  margin-top: -12px !important;
+}

@@ -1,47 +1,35 @@
-<h3>Content with Filters</h3>
-<div>
-    {{data.value}}
-    {{cars.length}}
-</div>
-<div>
-
-    <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" filter="true" filterBy="label" [style]="{'width':'300px'}" #data>
+<div class="pl-4 media-pl mb-8" fxFlex="100">
+    <p-dropdown [options]="Datalist" [(ngModel)]="selectedId" (onChange)='onSelectOut()' filter="true" filterBy="label" #data [style]="{'width':'90%','height':'40px'}">
         <ng-template let-item pTemplate="selectedItem">
             <span style="vertical-align:middle; margin-left: .5em">{{item.label}}</span>
         </ng-template>
-        <ng-template let-car pTemplate="item">
+        <ng-template let-value pTemplate="item">
             <div class="ui-helper-clearfix" style="position: relative;height: 35px;">
-                <div style="font-size:14px;margin-top:4px">{{car.label}}</div>
+                <div style="font-size:14px;margin-top:4px">{{value.label}}</div>
             </div>
         </ng-template>
     </p-dropdown>
-    <button pButton type="button" icon="pi pi-window-minimize" iconPos="left" (click)='dialogShowHandler()'></button>
-    <p>Selected Car: {{selectedCar2 || 'none'}}</p>
-    <h3>Basic</h3>
-    <!-- <button type="button" (click)="showBasicDialog()" pButton icon="pi pi-external-link" label="Show"></button> -->
-    <p-dialog header="Car Entry" [(visible)]="displayBasic" [style]="{width: '60vw'}" [baseZIndex]="10000">
-        <!-- <form [formGroup]='form'>
-            <div class="p-field p-grid">
-                <label for="label" class="p-col-fixed" style="width:100px">Name</label>
-                <div class="p-col">
-                    <input id="firstname3" type="text" pInputText formControlName="label">
-                </div>
-            </div>
-            <div class="p-field p-grid">
-                <label for="value" class="p-col-fixed" style="width:100px">Value</label>
-                <div class="p-col">
-                    <input id="lastname3" type="text" pInputText formControlName="value">
-                </div>
-            </div>
-
-        </form> -->
-
-        <app-ptable></app-ptable>
-
-
-        <p-footer>
-            <button type="button" pButton icon="pi pi-check" (click)="dialogHandler()" label="Yes"></button>
-            <button type="button" pButton icon="pi pi-times" (click)="dialogShowHandler()" label="No" class="ui-button-secondary"></button>
-        </p-footer>
-    </p-dialog>
+    <button pButton type="button" icon="pi pi-plus-circle" iconPos="left" (click)='dialogShowHandler()'></button>
 </div>
+
+<p-dialog keepInViewport='true' [maximizable]="true" closeOnEscape showHeader='false' modal='true' [(visible)]="displayBasic" [style]="{width: '60vw'}" [baseZIndex]="10000">
+    <form [formGroup]='form'>
+        <div class="p-field p-grid">
+            <label for="label" class="p-col-fixed" style="width:100px">Name</label>
+            <div class="p-col">
+                <input id="firstname3" type="text" pInputText formControlName="label">
+            </div>
+        </div>
+        <div class="p-field p-grid">
+            <label for="value" class="p-col-fixed" style="width:100px">Value</label>
+            <div class="p-col">
+                <input id="lastname3" type="text" pInputText formControlName="value">
+            </div>
+        </div>
+
+    </form>
+    <p-footer>
+        <button type="button" pButton icon="pi pi-check" (click)="dialogHandler()" label="Yes"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="dialogShowHandler()" label="No" class="ui-button-secondary"></button>
+    </p-footer>
+</p-dialog>

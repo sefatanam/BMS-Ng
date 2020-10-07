@@ -52,6 +52,7 @@
     </div>
     <form class="example-form" [formGroup]="form" novalidate *ngIf='!skeletonLoader'>
       <my-input formControlName="firstName" placeholder="First Name" [required]="valid"></my-input>
+      <app-sdropdown></app-sdropdown>
 
       <my-input formControlName="lastName" placeholder="Last Name" [required]="!valid"></my-input>
 

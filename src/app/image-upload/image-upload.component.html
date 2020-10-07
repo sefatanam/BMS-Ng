@@ -1,7 +1,17 @@
-<div>
+<!-- <div>
     <img src='file://C|/Users/Sefat%20Anam/Desktop/New%20folder/Annotation%202020-09-02%20161707.png' height="200" /><br>
-    <!-- <img src='data:image/png;base64,file:///C|/Users/Sefat%20Anam/Desktop/New%20folder/Annotation%202020-09-02%20161707.png' height="200" /><br> -->
     <img [(src)]='image' height="200" /><br>
     <input type="file" (change)='onSelectFile($event)' />
 
+</div> -->
+
+<div>
+
+    <app-sdropdown [Datalist]='cars'></app-sdropdown>
+    <app-sdropdown [Datalist]='cars' (GetSelectedId)='GetSelectedIdChild($event)'></app-sdropdown>
+    <app-sdropdown [Datalist]='cars'></app-sdropdown>
 </div>
+
+<!-- <app-sdropdown></app-sdropdown>
+<app-sdropdown></app-sdropdown>
+<app-sdropdown></app-sdropdown> -->

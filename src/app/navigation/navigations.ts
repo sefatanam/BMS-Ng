@@ -66,5 +66,12 @@ export const navigtions: Menu[] = [
     type: 'item',
     icon: '',
     url: '/usableTable'
+  },
+  {
+    id: 7,
+    name: 'Dropdown',
+    type: 'item',
+    icon: '',
+    url: '/dropdown'
   }
 ];

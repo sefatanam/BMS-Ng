@@ -7,7 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImageUploadComponent implements OnInit {
 
-  constructor() { }
+  cars: any[];
+
+  constructor() {
+    this.cars = [
+      { label: 'Audi', value: 1 },
+      { label: 'BMW', value: 2 },
+      { label: 'Fiat', value: 3 },
+      { label: 'Ford', value: 3 },
+      { label: 'Honda', value: 4 },
+      { label: 'Jaguar', value: 5 },
+      { label: 'Mercedes', value: 6 },
+      { label: 'Renault', value: 7 },
+      { label: 'VW', value: 8 },
+      { label: 'Volvo', value: 9 }
+    ];
+  }
+
+
 
 
   image = './assets/photo.jpg';
@@ -30,6 +47,11 @@ export class ImageUploadComponent implements OnInit {
       };
 
     }
+  }
+
+
+  GetSelectedIdChild(num: number): void {
+    console.log('DD CHILD CALLEDD', num);
   }
 
 }
