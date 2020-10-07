@@ -7,9 +7,11 @@
 
 <div>
 
-    <app-sdropdown [Datalist]='cars'></app-sdropdown>
-    <app-sdropdown [Datalist]='cars' (GetSelectedId)='GetSelectedIdChild($event)'></app-sdropdown>
-    <app-sdropdown [Datalist]='cars'></app-sdropdown>
+    <!-- <app-sdropdown [Datalist]='cars'></app-sdropdown> -->
+    <app-sdropdown [datalist]='cars' (GetSelectedId)='GetSelectedIdChild($event)'>
+        <app-demo-form></app-demo-form>
+    </app-sdropdown>
+    <!-- <app-sdropdown [Datalist]='cars'></app-sdropdown> -->
 </div>
 
 <!-- <app-sdropdown></app-sdropdown>

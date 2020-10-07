@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ContentChild, ElementRef, AfterContentChecked, ViewChild, AfterContentInit, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { FormBuilder, FormControl } from '@angular/forms';
 
@@ -11,54 +11,40 @@ interface IDropDown {
 @Component({
   selector: 'app-sdropdown',
   templateUrl: './sdropdown.component.html',
-  styleUrls: ['./sdropdown.component.css']
+  styleUrls: ['./sdropdown.component.css',
+  ]
 })
-export class SdropdownComponent implements OnInit {
+export class SdropdownComponent {
 
 
   // Input
-  @Input() Datalist: SelectItem[];
+  @Input('datalist') Datalist: SelectItem[];
   //Out
   @Output() GetSelectedId: EventEmitter<number> = new EventEmitter<number>();
 
+  @ViewChild('content', { static: true }) content: ElementRef;
+
   public selectedId: number;
+  public isAddButtonShow: boolean = true;
 
-  cars: SelectItem[];
-  selectedCar2: string = 'BMW';
-  displayBasic: boolean = false;
-  form
-
-  constructor(private _fb: FormBuilder) {
-    this.createForm();
+  isDialogvisible: boolean = false;
+  constructor() {
   }
+
+
 
   onSelectOut(): void {
     this.GetSelectedId.emit(this.selectedId);
   }
 
-
-  createForm() {
-    this.form = this._fb.group({
-      label: new FormControl(''),
-      value: new FormControl(''),
-    });
-  }
-
-  ngOnInit() {
-  }
-
   dialogHandler() {
+    this.isDialogvisible = !this.isDialogvisible;
+  }
 
-    if (this.form.valid) {
-      const data = this.form.value;
-      this.cars[this.cars.length] = { label: data.label, value: data.value };
-      this.form.reset();
-    }
-    this.displayBasic = !this.displayBasic;
-  }
   dialogShowHandler() {
-    this.displayBasic = !this.displayBasic;
+    this.isDialogvisible = !this.isDialogvisible;
   }
+
   onDropDownChage(obj) {
     console.log(obj)
   }

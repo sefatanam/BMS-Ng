@@ -1,5 +1,5 @@
 <div class="pl-4 media-pl mb-8" fxFlex="100">
-    <p-dropdown [options]="Datalist" [(ngModel)]="selectedId" (onChange)='onSelectOut()' filter="true" filterBy="label" #data [style]="{'width':'90%','height':'40px'}">
+    <p-dropdown [options]="Datalist" [(ngModel)]="selectedId" (onChange)='onSelectOut()' filter="true" filterBy="label" [style]="{'width':'90%','height':'40px'}">
         <ng-template let-item pTemplate="selectedItem">
             <span style="vertical-align:middle; margin-left: .5em">{{item.label}}</span>
         </ng-template>
@@ -9,27 +9,15 @@
             </div>
         </ng-template>
     </p-dropdown>
+
     <button pButton type="button" icon="pi pi-plus-circle" iconPos="left" (click)='dialogShowHandler()'></button>
+
 </div>
 
-<p-dialog keepInViewport='true' [maximizable]="true" closeOnEscape showHeader='false' modal='true' [(visible)]="displayBasic" [style]="{width: '60vw'}" [baseZIndex]="10000">
-    <form [formGroup]='form'>
-        <div class="p-field p-grid">
-            <label for="label" class="p-col-fixed" style="width:100px">Name</label>
-            <div class="p-col">
-                <input id="firstname3" type="text" pInputText formControlName="label">
-            </div>
-        </div>
-        <div class="p-field p-grid">
-            <label for="value" class="p-col-fixed" style="width:100px">Value</label>
-            <div class="p-col">
-                <input id="lastname3" type="text" pInputText formControlName="value">
-            </div>
-        </div>
+<ng-container>
+    <p-dialog keepInViewport='true' [maximizable]="true" modal='true' [(visible)]="isDialogvisible" [style]="{width: '60vw'}" [baseZIndex]="1" transitionOptions='150ms cubic-bezier(0, 0, 0.2, .99)'>
 
-    </form>
-    <p-footer>
-        <button type="button" pButton icon="pi pi-check" (click)="dialogHandler()" label="Yes"></button>
-        <button type="button" pButton icon="pi pi-times" (click)="dialogShowHandler()" label="No" class="ui-button-secondary"></button>
-    </p-footer>
-</p-dialog>
+        <ng-content></ng-content>
+
+    </p-dialog>
+</ng-container>
